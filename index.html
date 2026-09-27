@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Home - Movie Space</title>
@@ -13,252 +13,314 @@
         img{max-width:100%;height:auto}
 
         /* HEADER */
-        .header,.nav{background:white}
-        .logo{border-radius:50%}
-        .nav a{color:#2c3e50}
-        .nav a:hover{color:#2980b9}
+        header{background:white;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:100}
+        .logo-area{display:flex;align-items:center;gap:12px}
+        .logo{width:50px;height:50px;border-radius:50%;object-fit:cover}
+        .logo-text h1{margin:0;font-size:22px;color:#2c3e50}
+        .logo-text h3{margin:3px 0 0;font-size:15px;color:#2980b9}
+        nav{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+        nav a{color:#2c3e50;font-weight:bold;padding:9px 11px;border-radius:5px}
+        nav a:hover,nav a.active{color:#2980b9;background:#f0f7fb}
+
+        .top-line{height:4px;background:blue;border:0;margin:0}
 
         /* HERO */
-        .hero{width:90%;margin:30px auto;padding:40px 30px;background:#2c3e50;color:white;border-radius:12px;text-align:center}
-        .hero h1{font-size:38px;margin-bottom:10px}
-        .hero p{font-size:16px;line-height:1.6}
-        .hero-button{display:inline-block;margin-top:15px;padding:12px 22px;background:#2980b9;color:white;border-radius:6px;font-weight:bold}
+        .hero{width:90%;max-width:1000px;margin:30px auto;padding:45px 25px;background:#2c3e50;color:white;border-radius:12px;text-align:center}
+        .hero h1{font-size:38px;margin:0 0 12px}
+        .hero p{font-size:16px;line-height:1.6;margin:8px 0}
+        .hero-button{display:inline-block;margin-top:15px;padding:12px 22px;background:#2980b9;color:white;border-radius:6px;font-weight:bold;transition:.3s}
         .hero-button:hover{background:#3498db}
 
         /* SECTION */
-        .section{width:90%;margin:30px auto}
-        .section-title{text-align:center}
-        .section-title h2{margin-bottom:5px}
-        .section-title p{color:#666}
+        .section{width:90%;max-width:1100px;margin:40px auto}
+        .section-title{text-align:center;margin-bottom:25px}
+        .section-title h2{margin:0 0 7px;color:#2c3e50}
+        .section-title p{margin:0;color:#666;line-height:1.6}
 
-        /* FILM */
-        .film-container{display:table;width:100%;border-spacing:12px}
-        .film-card{display:table-cell;width:20%;vertical-align:top;text-align:center;padding:12px;border-bottom:3px solid #2980b9;background:white}
-        .film-card:hover{transform:translateY(-4px);transition:.2s}
-        .film-card img{width:100%;height:270px;object-fit:cover;border-radius:6px}
-        .film-card h3{margin-bottom:5px}
-        .genre{color:#2980b9;font-size:14px;font-weight:bold}
-        .rating,.trending{color:#e67e22;font-weight:bold}
-        .trending{font-size:13px}
-
-        /* SAMBUTAN */
-        .welcome{width:90%;margin:35px auto;padding:10px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+        /* WELCOME */
+        .welcome{width:90%;max-width:1000px;margin:35px auto;padding:15px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+        .welcome h2{color:#2980b9}
         .welcome p{line-height:1.7;color:#555}
 
+        /* FILM */
+        .film-container{display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+        .film-card{text-align:center;padding:12px 8px 20px;border-bottom:3px solid #2980b9;background:white;transition:.3s}
+        .film-card:hover{transform:translateY(-5px)}
+        .film-card img{width:100%;height:270px;object-fit:cover;border-radius:6px}
+        .film-card h3{margin:12px 0 6px;font-size:18px}
+        .film-card p{line-height:1.5;margin:7px 0;color:#555;font-size:14px}
+        .genre{color:#2980b9;font-weight:bold}
+        .rating,.trending{color:#e67e22;font-weight:bold}
+        .trending{font-size:13px!important}
+
+        /* TOMBOL FILM */
+        .more{text-align:center;margin:30px 0}
+        .more .hero-button{margin:0}
+
         /* PAKET */
-        .paket-container{width:90%;margin:auto;display:table;border-spacing:20px 0}
-        .paket{display:table-cell;width:33%;vertical-align:top;text-align:center;padding:10px 20px;border-top:3px solid #2980b9}
+        .paket-container{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+        .paket{text-align:center;padding:10px 20px;border-top:3px solid #2980b9}
         .paket h3{color:#2980b9}
-        .harga{font-size:25px;font-weight:bold}
-        .paket ol{text-align:left}
+        .harga{font-size:25px;font-weight:bold;color:#2c3e50}
+        .paket ol{text-align:left;margin:0;padding-left:25px}
+        .paket li{padding-left:5px}
 
         /* FOOTER */
-        footer{background:#2c3e50;color:white;margin-top:40px;padding:25px;text-align:center}
+        footer{background:#2c3e50;color:white;margin-top:45px;padding:25px 15px;text-align:center}
+        footer h2{margin-top:0}
+        footer p{line-height:1.7;margin:8px 0}
         footer a{color:white}
         footer a:hover{color:#5dade2}
+        footer hr{border:0;border-top:1px solid rgba(255,255,255,.3);margin:18px 0}
 
-        /* RESPONSIVE */
-        @media screen and (max-width:700px){
-            .header td{display:block;text-align:center;width:100%!important}
-            .header h1{font-size:25px;margin:5px}
-            .header h3{margin-top:5px}
-            .nav td{display:inline-block;width:50%!important;padding:8px 2px}
-            .nav a{font-size:12px}
-            .hero{width:94%;padding:30px 15px}
-            .hero h1{font-size:27px}
-            .hero p{font-size:14px}
-            .section,.welcome{width:94%}
-            .film-container,.paket-container{display:block;width:94%;margin:auto}
-            .film-card,.paket{display:block;width:100%;margin-bottom:20px}
+        /* TABLET */
+        @media(max-width:950px){
+            .film-container{grid-template-columns:repeat(3,1fr)}
+            .paket-container{grid-template-columns:repeat(3,1fr);gap:15px}
+        }
+
+        /* HP */
+        @media(max-width:700px){
+            header{padding:12px 10px;display:block;text-align:center;position:relative}
+            .logo-area{justify-content:center}
+            .logo{width:52px;height:52px}
+            .logo-text{text-align:left}
+            .logo-text h1{font-size:20px}
+            .logo-text h3{font-size:14px}
+
+            nav{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+            nav a{font-size:12px;padding:9px 3px}
+
+            .top-line{height:3px}
+
+            .hero{width:94%;margin:22px auto;padding:35px 16px;border-radius:10px}
+            .hero h1{font-size:28px}
+            .hero p{font-size:14px;line-height:1.6}
+            .hero-button{font-size:14px;padding:11px 18px}
+
+            .welcome{width:94%;margin:30px auto;padding:10px 0}
+            .welcome h2{font-size:23px;line-height:1.4}
+            .welcome p{font-size:15px;line-height:1.7}
+
+            .section{width:94%;margin:35px auto}
+            .section-title h2{font-size:23px}
+            .section-title p{font-size:14px}
+
+            .film-container{display:block}
+            .film-card{width:100%;margin-bottom:22px;padding:15px 10px 22px}
             .film-card img{width:180px;height:250px}
-            .paket{text-align:center;padding:10px 5px;border-top:2px solid #2980b9}
-            footer{padding:20px 10px}
-            footer p{line-height:2}
+            .film-card h3{font-size:20px}
+            .film-card p{font-size:14px}
+
+            .more{margin:25px 0}
+            .more .hero-button{display:inline-block}
+
+            .paket-container{display:block}
+            .paket{width:100%;margin-bottom:25px;padding:15px 5px;border-top:2px solid #2980b9}
+            .paket h3{font-size:20px}
+            .harga{font-size:23px}
+            .paket ol{padding-left:30px}
+
+            footer{padding:25px 10px}
+            footer h2{font-size:20px}
+            footer p{font-size:13px;line-height:1.9}
+        }
+
+        /* HP KECIL */
+        @media(max-width:430px){
+            .logo{width:48px;height:48px}
+            .logo-text h1{font-size:18px}
+            .logo-text h3{font-size:13px}
+
+            nav{grid-template-columns:repeat(2,1fr)}
+            nav a{font-size:12px}
+
+            .hero h1{font-size:25px}
+            .hero p{font-size:13px}
+
+            .welcome h2{font-size:21px}
+            .welcome p{font-size:14px}
+
+            .film-card img{width:170px;height:240px}
         }
     </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<table class="header" width="100%" cellpadding="8">
-    <tr>
-        <td width="100" align="center">
-            <img class="logo" src="trejo.jpg" width="75" height="75" alt="Logo Movie Space">
-        </td>
-        <td>
-            <h1><font color="#2c3e50">MOVIE SPACE</font></h1>
-            <h3><font color="#2980b9">Sabihisma Fetra</font></h3>
-        </td>
-    </tr>
-</table>
+    <!-- HEADER -->
+    <header>
+        <div class="logo-area">
+            <img class="logo" src="trejo.jpg" alt="Logo Movie Space">
 
-<hr size="4" color="blue">
+            <div class="logo-text">
+                <h1>MOVIE SPACE</h1>
+                <h3>Sabihisma Fetra</h3>
+            </div>
+        </div>
 
-<!-- NAVIGASI -->
-<table class="nav" width="100%" cellpadding="10">
-    <tr align="center">
-        <td><a href="index.html"><b>🏠 Home</b></a></td>
-        <td><a href="profil.html"><b>👤 Profil</b></a></td>
-        <td><a href="daftar film.html"><b>🎞️ Daftar Film</b></a></td>
-        <td><a href="gallery.html"><b>🖼️ Gallery</b></a></td>
-        <td><a href="kontak.html"><b>📧 Kontak</b></a></td>
-    </tr>
-</table>
+        <nav>
+            <a href="index.html" class="active">🏠 Home</a>
+            <a href="profil.html">👤 Profil</a>
+            <a href="daftar film.html">🎞️ Film</a>
+            <a href="gallery.html">🖼️ Gallery</a>
+            <a href="kontak.html">📧 Kontak</a>
+        </nav>
+    </header>
 
-<hr size="4" color="blue">
+    <hr class="top-line">
 
-<!-- HERO -->
-<section class="hero">
-    <h1>🎬 MOVIE SPACE</h1>
-    <p>Temukan film favoritmu dari berbagai genre, mulai dari action, fantasy hingga sci-fi.</p>
-    <p>⭐ Informasi Film &nbsp; • &nbsp; 🎞️ Trailer &nbsp; • &nbsp; ⭐ Rating</p>
-    <a class="hero-button" href="daftar film.html">🎬 Jelajahi Film</a>
-</section>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>🎬 MOVIE SPACE</h1>
+        <p>Temukan film favoritmu dari berbagai genre, mulai dari action, fantasy hingga sci-fi.</p>
+        <p>⭐ Informasi Film &nbsp; • &nbsp; 🎞️ Trailer &nbsp; • &nbsp; ⭐ Rating</p>
+        <a class="hero-button" href="daftar film.html">🎬 Jelajahi Film</a>
+    </section>
 
-<!-- SELAMAT DATANG -->
-<section class="welcome">
-    <h2><font color="#2980b9">👋 Selamat Datang di Movie Space</font></h2>
-    <p>Movie Space merupakan website yang menampilkan informasi mengenai berbagai film populer dari berbagai genre.</p>
-    <p>Kamu dapat melihat poster, genre, tahun rilis, rating, sinopsis, serta trailer film yang tersedia.</p>
-</section>
+    <!-- SELAMAT DATANG -->
+    <section class="welcome">
+        <h2>👋 Selamat Datang di Movie Space</h2>
+        <p>Movie Space merupakan website yang menampilkan informasi mengenai berbagai film populer dari berbagai genre.</p>
+        <p>Kamu dapat melihat poster, genre, tahun rilis, rating, sinopsis, serta trailer film yang tersedia.</p>
+    </section>
 
-<!-- FILM TERPOPULER -->
-<section class="section">
-    <div class="section-title">
-        <h2><font color="#2c3e50">🔥 Film Terpopuler</font></h2>
-        <p>Beberapa film pilihan yang tersedia di Movie Space.</p>
+    <!-- FILM TERPOPULER -->
+    <section class="section">
+        <div class="section-title">
+            <h2>🔥 Film Terpopuler</h2>
+            <p>Beberapa film pilihan yang tersedia di Movie Space.</p>
+        </div>
+
+        <div class="film-container">
+
+            <div class="film-card">
+                <p class="trending">🔥 TRENDING</p>
+                <img src="The One Piece.jpeg" alt="One Piece">
+                <h3>One Piece</h3>
+                <p class="genre">Action • Adventure • Fantasy</p>
+                <p class="rating">⭐ 4.5/5</p>
+                <p>Petualangan Luffy bersama kru Bajak Laut Topi Jerami.</p>
+            </div>
+
+            <div class="film-card">
+                <p class="trending">🔥 POPULER</p>
+                <img src="harry potter.jpeg" alt="Harry Potter">
+                <h3>Harry Potter</h3>
+                <p class="genre">Fantasy • Adventure • Mystery</p>
+                <p class="rating">⭐ 4.8/5</p>
+                <p>Petualangan Harry Potter dan sahabatnya di Hogwarts.</p>
+            </div>
+
+            <div class="film-card">
+                <p class="trending">🔥 POPULER</p>
+                <img src="spiderman.jpeg" alt="Spider-Man">
+                <h3>Spider-Man</h3>
+                <p class="genre">Animation • Action • Adventure</p>
+                <p class="rating">⭐ 4.7/5</p>
+                <p>Petualangan Spider-Man dari berbagai dimensi.</p>
+            </div>
+
+            <div class="film-card">
+                <p class="trending">🔥 BOX OFFICE</p>
+                <img src="avengers.jpeg" alt="Avengers Endgame">
+                <h3>Avengers: Endgame</h3>
+                <p class="genre">Action • Adventure • Sci-Fi</p>
+                <p class="rating">⭐ 4.9/5</p>
+                <p>Para Avengers berusaha mengembalikan kedamaian dunia.</p>
+            </div>
+
+            <div class="film-card">
+                <p class="trending">⭐ FAVORIT</p>
+                <img src="interstellar.jpeg" alt="Interstellar">
+                <h3>Interstellar</h3>
+                <p class="genre">Sci-Fi • Adventure • Drama</p>
+                <p class="rating">⭐ 4.8/5</p>
+                <p>Perjalanan luar angkasa untuk mencari planet baru.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- TOMBOL DAFTAR FILM -->
+    <div class="more">
+        <a class="hero-button" href="daftar film.html">🎞️ Lihat Semua Film</a>
     </div>
 
-    <div class="film-container">
+    <hr width="90%">
 
-        <div class="film-card">
-            <p class="trending">🔥 TRENDING</p>
-            <img src="The One Piece.jpeg" alt="One Piece">
-            <h3>One Piece</h3>
-            <p class="genre">Action • Adventure • Fantasy</p>
-            <p class="rating">⭐ 4.5/5</p>
-            <p>Petualangan Luffy bersama kru Bajak Laut Topi Jerami.</p>
+    <!-- PAKET BERLANGGANAN -->
+    <section class="section">
+        <div class="section-title">
+            <h2>⭐ Pilih Paket Berlangganan</h2>
+            <p>Nikmati pengalaman menonton dengan paket yang sesuai untukmu.</p>
         </div>
 
-        <div class="film-card">
-            <p class="trending">🔥 POPULER</p>
-            <img src="harry potter.jpeg" alt="Harry Potter">
-            <h3>Harry Potter</h3>
-            <p class="genre">Fantasy • Adventure • Mystery</p>
-            <p class="rating">⭐ 4.8/5</p>
-            <p>Petualangan Harry Potter dan sahabatnya di Hogwarts.</p>
+        <div class="paket-container">
+
+            <div class="paket">
+                <ol type="A">
+                    <li>
+                        <h3>BASIC</h3>
+                        <p class="harga">Rp20.000</p>
+                        <p><b>per bulan</b></p>
+                        <p>✓ Informasi film</p>
+                        <p>✓ Poster & genre</p>
+                        <p>✓ Rating film</p>
+                        <p>✓ Trailer film</p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="paket">
+                <ol type="A" start="2">
+                    <li>
+                        <h3>PREMIUM</h3>
+                        <p class="harga">Rp40.000</p>
+                        <p><b>per bulan</b></p>
+                        <p>✓ Semua fitur Basic</p>
+                        <p>✓ Koleksi film lebih lengkap</p>
+                        <p>✓ Fitur tambahan</p>
+                        <p>✓ Akses lebih luas</p>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="paket">
+                <ol type="A" start="3">
+                    <li>
+                        <h3>VIP</h3>
+                        <p class="harga">Rp60.000</p>
+                        <p><b>per bulan</b></p>
+                        <p>✓ Semua fitur Premium</p>
+                        <p>✓ Koleksi film premium</p>
+                        <p>✓ Fitur eksklusif</p>
+                        <p>✓ Akses paling lengkap</p>
+                    </li>
+                </ol>
+            </div>
+
         </div>
+    </section>
 
-        <div class="film-card">
-            <p class="trending">🔥 POPULER</p>
-            <img src="spiderman.jpeg" alt="Spider-Man">
-            <h3>Spider-Man</h3>
-            <p class="genre">Animation • Action • Adventure</p>
-            <p class="rating">⭐ 4.7/5</p>
-            <p>Petualangan Spider-Man dari berbagai dimensi.</p>
-        </div>
+    <!-- FOOTER -->
+    <footer>
+        <h2>🎬 Movie Space</h2>
+        <p>Jelajahi berbagai film dan temukan informasi yang kamu cari.</p>
 
-        <div class="film-card">
-            <p class="trending">🔥 BOX OFFICE</p>
-            <img src="avengers.jpeg" alt="Avengers Endgame">
-            <h3>Avengers: Endgame</h3>
-            <p class="genre">Action • Adventure • Sci-Fi</p>
-            <p class="rating">⭐ 4.9/5</p>
-            <p>Para Avengers berusaha mengembalikan kedamaian dunia.</p>
-        </div>
+        <p>
+            <a href="index.html">🏠 Home</a> &nbsp; | &nbsp;
+            <a href="profil.html">👤 Profil</a> &nbsp; | &nbsp;
+            <a href="daftar film.html">🎞️ Daftar Film</a> &nbsp; | &nbsp;
+            <a href="gallery.html">🖼️ Gallery</a> &nbsp; | &nbsp;
+            <a href="kontak.html">📧 Kontak</a>
+        </p>
 
-        <div class="film-card">
-            <p class="trending">⭐ FAVORIT</p>
-            <img src="interstellar.jpeg" alt="Interstellar">
-            <h3>Interstellar</h3>
-            <p class="genre">Sci-Fi • Adventure • Drama</p>
-            <p class="rating">⭐ 4.8/5</p>
-            <p>Perjalanan luar angkasa untuk mencari planet baru.</p>
-        </div>
+        <hr>
 
-    </div>
-</section>
-
-<!-- TOMBOL DAFTAR FILM -->
-<center>
-    <a class="hero-button" href="daftar film.html">🎞️ Lihat Semua Film</a>
-</center>
-
-<br><br>
-<hr width="90%">
-
-<!-- PAKET BERLANGGANAN -->
-<section class="section">
-    <div class="section-title">
-        <h2><font color="#2c3e50">⭐ Pilih Paket Berlangganan</font></h2>
-        <p>Nikmati pengalaman menonton dengan paket yang sesuai untukmu.</p>
-    </div>
-
-    <div class="paket-container">
-
-        <div class="paket">
-            <ol type="A">
-                <li>
-                    <h3>BASIC</h3>
-                    <p class="harga">Rp20.000</p>
-                    <p><b>per bulan</b></p>
-                    <p>✓ Informasi film</p>
-                    <p>✓ Poster & genre</p>
-                    <p>✓ Rating film</p>
-                    <p>✓ Trailer film</p>
-                </li>
-            </ol>
-        </div>
-
-        <div class="paket">
-            <ol type="A" start="2">
-                <li>
-                    <h3>PREMIUM</h3>
-                    <p class="harga">Rp40.000</p>
-                    <p><b>per bulan</b></p>
-                    <p>✓ Semua fitur Basic</p>
-                    <p>✓ Koleksi film lebih lengkap</p>
-                    <p>✓ Fitur tambahan</p>
-                    <p>✓ Akses lebih luas</p>
-                </li>
-            </ol>
-        </div>
-
-        <div class="paket">
-            <ol type="A" start="3">
-                <li>
-                    <h3>VIP</h3>
-                    <p class="harga">Rp60.000</p>
-                    <p><b>per bulan</b></p>
-                    <p>✓ Semua fitur Premium</p>
-                    <p>✓ Koleksi film premium</p>
-                    <p>✓ Fitur eksklusif</p>
-                    <p>✓ Akses paling lengkap</p>
-                </li>
-            </ol>
-        </div>
-
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-    <h2>🎬 Movie Space</h2>
-    <p>Jelajahi berbagai film dan temukan informasi yang kamu cari.</p>
-
-    <p>
-        <a href="index.html">🏠 Home</a> &nbsp; | &nbsp;
-        <a href="profil.html">👤 Profil</a> &nbsp; | &nbsp;
-        <a href="daftar film.html">🎞️ Daftar Film</a> &nbsp; | &nbsp;
-        <a href="gallery.html">🖼️ Gallery</a> &nbsp; | &nbsp;
-        <a href="kontak.html">📧 Kontak</a>
-    </p>
-
-    <hr>
-    <p><b>Admin Web, Me</b></p>
-    <p><b>&copy; 2026 Hak Cipta Dilindungi Undang-Undang.</b></p>
-</footer>
+        <p><b>Admin Web, Me</b></p>
+        <p><b>&copy; 2026 Hak Cipta Dilindungi Undang-Undang.</b></p>
+    </footer>
 
 </body>
 </html>
