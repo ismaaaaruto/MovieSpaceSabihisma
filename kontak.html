@@ -1,160 +1,203 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-
 <head>
     <title>Kontak - Movie Space</title>
     <link rel="icon" type="image/x-icon" href="trejo.jpg">
     <meta name="keywords" content="animation, fantasy, action, sci-fi">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        *{box-sizing:border-box}
+        body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#2c3e50}
+        a{text-decoration:none}
+
+        /* HEADER */
+        header{background:white;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:100}
+        .logo{display:flex;align-items:center;gap:10px}
+        .logo img{width:48px;height:48px;border-radius:50%;object-fit:cover}
+        .logo-text h2{margin:0;font-size:20px}
+        .logo-text p{margin:2px 0 0;color:#777;font-size:12px}
+        nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
+        nav a{color:#2c3e50;font-weight:bold;padding:9px 12px}
+        nav a:hover,nav a.active{color:#2980b9}
+
+        /* GARIS */
+        .top-line{height:4px;background:blue;border:0;margin:0}
+
+        /* HERO */
+        .hero{width:90%;max-width:1000px;margin:30px auto;padding:45px 20px;background:#2c3e50;color:white;text-align:center;border-radius:12px}
+        .hero h1{margin:0 0 12px;font-size:36px}
+        .hero p{margin:7px 0;line-height:1.6;color:#ecf0f1}
+
+        /* CONTENT */
+        .container{width:85%;max-width:950px;margin:45px auto}
+        .intro{text-align:center;margin-bottom:45px}
+        .intro h2{margin-bottom:10px;color:#2c3e50}
+        .intro p{color:#666;line-height:1.7}
+
+        .contact-content{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+        .contact-section{padding:5px 0 25px;border-bottom:1px solid #ddd}
+        .contact-section h2{margin-top:0;color:#2980b9;font-size:22px}
+        .contact-section p{color:#555;line-height:1.8;margin:8px 0}
+
+        .data{margin:18px 0}
+        .data strong{display:inline-block;min-width:130px;color:#2c3e50}
+        .data span{color:#555}
+
+        .email{display:inline-block;margin-top:10px;color:#2980b9;font-size:18px;font-weight:bold}
+        .email:hover{color:#2c3e50;text-decoration:underline}
+
+        .note{margin-top:25px;padding-left:15px;border-left:4px solid #2980b9}
+        .note p{margin:5px 0;color:#666;line-height:1.7}
+
+        /* BUTTON */
+        .buttons{text-align:center;margin:45px 0 20px}
+        .button{display:inline-block;margin:5px;padding:11px 20px;background:#2980b9;color:#fff;border-radius:7px;font-weight:bold;transition:.3s}
+        .button:hover{background:#2c3e50;transform:translateY(-2px)}
+
+        /* FOOTER */
+        footer{background:#2c3e50;color:#fff;text-align:center;padding:25px 15px;margin-top:45px}
+        footer h2{margin:0 0 10px}
+        footer p{line-height:1.7;margin:8px 0}
+        footer a{color:#fff}
+        footer a:hover{color:#5dade2}
+        footer hr{border:0;border-top:1px solid rgba(255,255,255,.3);margin:18px 0}
+
+        /* RESPONSIVE */
+        @media(max-width:700px){
+            header{flex-direction:column;gap:10px;padding:12px 10px}
+            nav{width:100%;justify-content:center}
+            nav a{font-size:12px;padding:7px 9px}
+            .hero{width:94%;padding:35px 15px}
+            .hero h1{font-size:28px}
+            .hero p{font-size:14px}
+            .container{width:92%;margin:35px auto}
+            .contact-content{grid-template-columns:1fr;gap:30px}
+            .data strong{display:block;margin-bottom:3px}
+            .email{font-size:16px}
+            .button{font-size:14px}
+        }
+    </style>
 </head>
 
-<body bgcolor="white">
+<body>
 
-    <h1><font color="#2c3e50">KONTAK</font></h1>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">
+            <img src="trejo.jpg" alt="Logo Movie Space">
+            <div class="logo-text">
+                <h2>🎬 MOVIE SPACE</h2>
+                <p>Sabihisma Fetra</p>
+            </div>
+        </div>
 
-    <hr size="4" color="blue" width="100%">
+        <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="profil.html">♟️ Profil</a>
+            <a href="daftar film.html">🎞️ Film</a>
+            <a href="gallery.html">🖼️ Gallery</a>
+            <a href="kontak.html" class="active">✉️ Kontak</a>
+        </nav>
+    </header>
 
-    <table width="100%" cellpadding="8">
-        <tr align="center">
+    <hr class="top-line">
 
-            <td>
-                <a href="index.html">
-                    <font color="#2c3e50"><b>🏠 Home</b></font>
-                </a>
-            </td>
+    <!-- HERO -->
+    <section class="hero">
+        <h1>📧 Kontak Movie Space</h1>
+        <p>Hubungi pengelola website untuk informasi lebih lanjut.</p>
+        <p>💬 Pertanyaan &nbsp; • &nbsp; 💡 Saran &nbsp; • &nbsp; 🎬 Informasi Film</p>
+    </section>
 
-            <td>
-                <a href="profil.html">
-                    <font color="#2c3e50"><b>👤 Profil</b></font>
-                </a>
-            </td>
+    <!-- CONTENT -->
+    <main class="container">
 
-            <td>
-                <a href="daftar film.html">
-                    <font color="#2c3e50"><b>🎞️ Daftar Film</b></font>
-                </a>
-            </td>
+        <section class="intro">
+            <h2>📬 Hubungi Movie Space</h2>
+            <p>
+                Jika memiliki pertanyaan, saran, atau ingin mengetahui informasi
+                lebih lanjut mengenai website ini, silakan menghubungi pengelola
+                melalui kontak yang tersedia.
+            </p>
+        </section>
 
-            <td>
-                <a href="gallery.html">
-                    <font color="#2c3e50"><b>🖼️ Gallery</b></font>
-                </a>
-            </td>
+        <div class="contact-content">
 
-            <td>
-                <a href="kontak.html">
-                    <font color="#2c3e50"><b>📧 Kontak</b></font>
-                </a>
-            </td>
+            <section class="contact-section">
+                <h2>👤 Informasi Pengelola</h2>
 
-        </tr>
-    </table>
+                <div class="data">
+                    <strong>Admin Website:</strong>
+                    <span>Sabihisma Fetra</span>
+                </div>
 
-    <hr size="4" color="blue" width="100%">
+                <div class="data">
+                    <strong>Bidang:</strong>
+                    <span>Informasi Film</span>
+                </div>
 
-    <br>
+                <div class="data">
+                    <strong>Website:</strong>
+                    <span>Movie Space</span>
+                </div>
+            </section>
 
-    <center>
-        <h1><font color="#2c3e50">📧 KONTAK MOVIE SPACE</font></h1>
-        <p><i>Hubungi pengelola website untuk informasi lebih lanjut.</i></p>
-    </center>
-
-    <br>
-
-    <table width="85%" align="center" cellpadding="20" bgcolor="white" border="1">
-        <tr>
-            <td>
-
-                <h2><font color="#2980b9">📬 Hubungi Movie Space</font></h2>
+            <section class="contact-section">
+                <h2>📧 Email</h2>
 
                 <p>
-                    Jika memiliki pertanyaan, saran, atau ingin mengetahui informasi lebih lanjut mengenai website ini,
-                    silakan menghubungi pengelola melalui kontak yang tersedia.
+                    Untuk menghubungi pengelola website, silakan gunakan
+                    alamat email berikut:
                 </p>
 
+                <a class="email" href="mailto:ismafetra17@gmail.com">
+                    ismafetra17@gmail.com
+                </a>
+            </section>
+
+        </div>
+
+        <section class="contact-section" style="margin-top:35px;">
+            <h2>💡 Informasi</h2>
+
+            <div class="note">
                 <p>
-                    Kami menyediakan kontak yang dapat digunakan untuk menyampaikan pertanyaan atau informasi mengenai
-                    film-film yang terdapat di dalam website.
+                    📌 Hubungi alamat email di atas untuk langsung membuka
+                    aplikasi email dan mengirim pesan kepada pengelola website.
                 </p>
+                <p>
+                    Silakan gunakan email untuk memberikan pertanyaan,
+                    saran, atau masukan mengenai website Movie Space.
+                </p>
+            </div>
+        </section>
 
-            </td>
-        </tr>
-    </table>
+        <div class="buttons">
+            <a class="button" href="index.html">🏠 Kembali ke Home</a>
+            <a class="button" href="daftar film.html">🎞️ Lihat Daftar Film</a>
+        </div>
 
-    <br>
+    </main>
 
-    <center>
-
-        <h2><font color="#2c3e50">👤 Informasi Pengelola</font></h2>
-
-        <p><b>Admin Website:</b> Sabihisma Fetra</p>
-        <p><b>Bidang:</b> Informasi Film</p>
-        <p><b>Website:</b> Movie Space</p>
-
-        <h2><font color="#2c3e50">📧 Email</font></h2>
-
-        <p>
-            Untuk menghubungi pengelola website, silakan hubungi alamat email berikut:
-        </p>
+    <!-- FOOTER -->
+    <footer>
+        <h2>🎬 Movie Space</h2>
+        <p>Jelajahi berbagai film dan temukan informasi yang kamu cari.</p>
 
         <p>
-            <a href="mailto:ismafetra17@gmail.com">
-                <font color="#2980b9"><b>ismafetra17@gmail.com</b></font>
-            </a>
+            <a href="index.html">🏠 Home</a> &nbsp; | &nbsp;
+            <a href="profil.html">👤 Profil</a> &nbsp; | &nbsp;
+            <a href="daftar film.html">🎞️ Daftar Film</a> &nbsp; | &nbsp;
+            <a href="gallery.html">🖼️ Gallery</a> &nbsp; | &nbsp;
+            <a href="kontak.html">📧 Kontak</a>
         </p>
 
-        <hr width="85%">
+        <hr>
 
-        <h2><font color="#2c3e50">💡 Informasi</font></h2>
-
-        <p>📌 <b>Catatan:</b></p>
-
-        <p>
-            Hubungi alamat email di atas untuk langsung membuka aplikasi email dan mengirim pesan kepada pengelola website.
-        </p>
-
-        <p>
-            Silakan gunakan email untuk memberikan pertanyaan, saran, atau masukan mengenai website Movie Space.
-        </p>
-
-    </center>
-
-    <br>
-
-    <hr>
-
-    <center>
-
-        <h2><font color="#2c3e50">🎬 Halaman Lainnya</font></h2>
-
-        <p>
-
-            <a href="index.html">
-                <font color="#2980b9"><b>🏠 Home</b></font>
-            </a> |
-
-            <a href="profil.html">
-                <font color="#2980b9"><b>👤 Profil</b></font>
-            </a> |
-
-            <a href="daftar film.html">
-                <font color="#2980b9"><b>🎞️ Daftar Film</b></font>
-            </a> |
-
-            <a href="gallery.html">
-                <font color="#2980b9"><b>🖼️ Gallery</b></font>
-            </a>
-
-        </p>
-
-    </center>
-
-    <hr size="4" color="blue" width="100%">
-
-    <p><b>Admin Web, Me</b></p>
-
-    <center>
+        <p><b>Admin Web, Me</b></p>
         <p><b>&copy; 2026 Hak Cipta Dilindungi Undang-Undang.</b></p>
-    </center>
+    </footer>
 
 </body>
 </html>
