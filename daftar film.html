@@ -1,390 +1,320 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
     <title>Daftar Film - Movie Space</title>
     <link rel="icon" type="image/x-icon" href="trejo.jpg">
     <meta name="keywords" content="animation, fantasy, action, sci-fi">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <style>
         *{box-sizing:border-box}
-        body{margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#2c3e50}
+        body{margin:0;font-family:Arial,sans-serif;background:#15152b;color:#eee}
         a{text-decoration:none}
-
+        
         /* HEADER */
-        header{background:white;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd}
-        .logo{display:flex;align-items:center;gap:10px}
-        .logo img{width:48px;height:48px;border-radius:50%;object-fit:cover}
-        .logo-text h2{margin:0;font-size:20px}
-        .logo-text p{margin:2px 0 0;color:#777;font-size:12px}
-        nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
-        nav a{color:#2c3e50;font-weight:bold;padding:9px 12px}
-        nav a:hover,nav a.active{color:#2980b9}
+        header{background:#101022;padding:12px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #302f50}
+        .logo-area{display:flex;align-items:center;gap:10px}
+        .logo{width:50px;height:50px;border-radius:50%;object-fit:cover}
+        .logo-text h1{margin:0;font-size:21px;color:#fff}
+        .logo-text h3{margin:3px 0 0;font-size:14px;color:#e8c65a}
+        nav{display:flex;gap:3px;flex-wrap:wrap;justify-content:center}
+        nav a{color:#ddd;font-weight:bold;padding:9px 11px;border-radius:5px}
+        nav a:hover,nav a.active{background:#e8c65a;color:#15152b}
+        .top-line{height:3px;background:#e8c65a;border:0;margin:0}
 
         /* HERO */
-        .hero{width:90%;margin:30px auto;padding:45px 20px;background:#2c3e50;color:white;text-align:center;border-radius:12px}
-        .hero h1{margin:0 0 12px;font-size:36px}
-        .hero p{margin:0;line-height:1.6;color:#ecf0f1}
+        .hero{width:92%;max-width:1050px;margin:22px auto;padding:50px 25px;background:linear-gradient(rgba(21,21,43,.65),rgba(21,21,43,.9)),url("avengers.jpeg") center/cover;color:#fff;border-radius:10px;text-align:center}
+        .hero h1{font-size:36px;margin:0 0 10px;color:#fff}
+        .hero p{font-size:15px;line-height:1.6;margin:6px 0;color:#bbb}
 
-        /* INTRO */
-        .intro{width:90%;max-width:1000px;margin:35px auto;padding:10px 0;text-align:center;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
-        .intro h2{color:#2980b9}
-        .intro p{color:#666;line-height:1.6}
+        /* CONTAINER & CARD FILM */
+        .film-container{width:92%;max-width:1000px;margin:30px auto}
+        .film-card{background:#20203b;padding:25px;margin-bottom:25px;border-radius:8px;border-top:3px solid #e8c65a}
+        .film-card h2{margin:0 0 12px;color:#fff;font-size:22px}
+        .film-title{display:inline-block}
+        .nomor{color:#e8c65a;font-weight:bold}
+        .genre{color:#e8c65a;font-weight:bold}
+        .rating{color:#e8c65a;font-weight:bold}
+        .sinopsis{line-height:1.7;color:#bbb;font-size:14px;margin:15px 0}
 
-        /* FILM */
-        .film-container{width:90%;max-width:1000px;margin:auto}
-        .film-card{background:white;padding:15px 5px 30px;margin-bottom:30px;border-bottom:2px solid #2980b9}
-        .film-card:last-child{margin-bottom:0}
-        .film-title{display:flex;align-items:center;gap:10px;color:#2c3e50}
-        .number{background:#e67e22;color:white;width:35px;height:35px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-size:16px;flex-shrink:0}
-        .genre{color:#2980b9;font-weight:bold}
-        .rating{color:#e67e22;font-weight:bold}
-        .sinopsis{line-height:1.7;color:#555}
-        .trailer-title{font-weight:bold;color:#2980b9;margin-top:25px}
-        .film-card hr{border:0;border-top:1px solid #ddd;margin:20px 0}
+        /* TRAILER & VIDEO */
+        .trailer-title{font-weight:bold;color:#e8c65a;margin-top:20px;font-size:15px}
+        .video-box{text-align:center;margin-top:10px}
+        video{width:100%;max-width:550px;border-radius:6px;background:#000;border:1px solid #302f50}
+        .video-buttons{margin-bottom:10px;display:flex;justify-content:center;flex-wrap:wrap;gap:6px}
+        .video-buttons button{border:0;background:#e8c65a;color:#15152b;padding:7px 14px;border-radius:4px;cursor:pointer;font-weight:bold;font-size:12px}
+        .video-buttons button:hover{background:#fff}
 
-        /* VIDEO */
-        .video-box{text-align:center;margin-top:15px}
-        video{width:100%;max-width:650px;border-radius:8px;background:#000}
-        .video-buttons{margin-bottom:15px}
-        .video-buttons button{border:0;background:#2980b9;color:white;padding:9px 14px;margin:4px;border-radius:5px;cursor:pointer;font-weight:bold}
-        .video-buttons button:hover{background:#2c3e50}
+        /* TABEL REKOMENDASI FILM */
+        .rekomendasi-section{background:#20203b;padding:25px;margin-top:30px;border-radius:8px;border-top:3px solid #e8c65a}
+        .rekomendasi-title{text-align:center;color:#ff3333;font-size:24px;margin-top:0;margin-bottom:20px;font-weight:bold}
+        .tbl-rekomendasi{width:100%;border-collapse:collapse;background:#15152b;color:#fff;border:1px solid #555}
+        .tbl-rekomendasi th, .tbl-rekomendasi td{border:1px solid #555;padding:12px;text-align:center;vertical-align:middle}
+        .tbl-rekomendasi th{background:#101022;color:#fff;font-size:16px}
+        .tbl-rekomendasi td img{width:80px;height:110px;object-fit:cover;border-radius:4px}
 
         /* FOOTER */
-        footer{background:#2c3e50;color:white;text-align:center;padding:25px 15px;margin-top:40px}
-        footer p{margin:7px 0;line-height:1.7}
-        footer a{color:white}
-        footer a:hover{color:#5dade2}
-        footer hr{border:0;border-top:1px solid rgba(255,255,255,.3);margin:18px 0}
+        footer{background:#101022;color:#ddd;margin-top:40px;padding:25px 15px;text-align:center}
+        footer h2{color:#e8c65a}
+        footer p{line-height:1.7}
+        footer a{color:#ddd}
+        footer a:hover{color:#e8c65a}
+        footer hr{border:0;border-top:1px solid #363653;margin:18px 0}
 
         /* RESPONSIVE */
         @media(max-width:700px){
-            header{flex-direction:column;gap:10px;padding:12px 10px}
-            nav{width:100%}
-            nav a{font-size:12px;padding:7px 9px}
+            header{display:block;text-align:center;padding:12px 10px}
+            .logo-area{justify-content:center}
+            nav{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+            nav a{font-size:12px;padding:8px 3px}
             .hero{width:94%;padding:35px 15px}
-            .hero h1{font-size:28px}
-            .hero p{font-size:14px}
-            .intro,.film-container{width:94%}
-            .film-card{padding:10px 5px 25px}
-            .film-title{font-size:20px}
-            .video-buttons button{padding:8px 10px;font-size:12px}
+            .film-container{width:94%}
+            .film-card, .rekomendasi-section{padding:16px 12px}
+            .tbl-rekomendasi th, .tbl-rekomendasi td{padding:8px 5px;font-size:12px}
+            .tbl-rekomendasi td img{width:60px;height:85px}
         }
+        @media(max-width:430px){nav{grid-template-columns:repeat(2,1fr)}}
     </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="logo">
-        <img src="trejo.jpg" alt="Logo Movie Space">
-        <div class="logo-text">
-            <h2>🎬 MOVIE SPACE</h2>
-            <p>Sabihisma Fetra</p>
+    <!-- HEADER -->
+    <header>
+        <div class="logo-area">
+            <img class="logo" src="trejo.jpg" alt="Logo Movie Space">
+            <div class="logo-text">
+                <h1>MOVIE SPACE</h1>
+                <h3>Sabihisma Fetra</h3>
+            </div>
         </div>
-    </div>
 
-    <nav>
-        <a href="index.html">🏠 Home</a>
-        <a href="profil.html">👤 Profil</a>
-        <a href="daftar film.html" class="active">🎞️ Film</a>
-        <a href="gallery.html">🖼️ Gallery</a>
-        <a href="kontak.html">📧 Kontak</a>
-    </nav>
-</header>
+        <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="profil.html">👤 Profil</a>
+            <a href="daftar film.html" class="active">🎞️ Daftar Film</a>
+            <a href="gallery.html">🖼️ Gallery</a>
+            <a href="kontak.html">📧 Kontak</a>
+        </nav>
+    </header>
 
-<hr size="4" color="blue">
+    <hr class="top-line">
 
-<!-- HERO -->
-<section class="hero">
-    <h1>🎞️ Daftar Film</h1>
-    <p>Temukan koleksi film pilihan lengkap dengan genre, rating, sinopsis, dan trailer.</p>
-</section>
+    <!-- CONTAINER DAFTAR FILM -->
+    <div class="film-container">
 
-<!-- INTRO -->
-<div class="intro">
-    <h2>🍿 Koleksi Film</h2>
-    <p>Jelajahi berbagai film pilihan dari berbagai genre dan nikmati trailer film favoritmu.</p>
-</div>
-
-<!-- FILM -->
-<div class="film-container">
-
-    <!-- FILM 1 -->
-    <div class="film-card">
-        <h2 class="film-title">
-            <span class="number">1</span>
-            One Piece
-        </h2>
-
-        <p>
-            <b>Genre:</b>
-            <span class="genre">Action, Adventure, Fantasy</span>
-        </p>
-
-        <p>
-            <span class="rating">⭐ 4.5/5</span>
-            &nbsp; | &nbsp; 📅 2026
-        </p>
-
-        <hr>
-
-        <p class="sinopsis">
-            <b>Sinopsis:</b>
-            One Piece menceritakan petualangan Monkey D. Luffy,
-            seorang pemuda yang memiliki tubuh elastis setelah
-            memakan Buah Iblis. Bersama kru Bajak Laut Topi Jerami,
-            Luffy menjelajahi lautan luas untuk menemukan harta
-            karun legendaris bernama "One Piece" demi menjadi
-            Raja Bajak Laut.
-        </p>
-
-        <p class="trailer-title">🎬 Trailer</p>
-
-        <div class="video-box">
-            <div class="video-buttons">
-                <button onclick="tekanPause(1)">▶ Play / ⏸ Pause</button>
-                <button onclick="menjadiBig(1)">🔍 Big</button>
-                <button onclick="menjadiSmall(1)">🔎 Small</button>
-                <button onclick="menjadiNormal(1)">↔ Normal</button>
+        <!-- FILM 1 -->
+        <div class="film-card">
+            <h2 class="film-title">
+                <span class="nomor">1.</span> One Piece 💡
+            </h2>
+            <div class="film-info">
+                <p><b>Genre:</b> <span class="genre">Action, Adventure, Fantasy</span></p>
+                <p>⭐ 4.5/5 &nbsp;|&nbsp; 📅 2026</p>
             </div>
 
-            <video id="video1" controls>
-                <source src="THE ONE PIECE _ Official Teaser.mp4" type="video/mp4">
-                Browser anda tidak mendukung video HTML5.
-            </video>
+            <p class="sinopsis">
+                <b>Sinopsis:</b> One Piece menceritakan petualangan Monkey D. Luffy, seorang pemuda yang memiliki tubuh elastis setelah memakan Buah Iblis. Bersama kru Bajak Laut Topi Jerami, Luffy menjelajahi lautan luas untuk menemukan harta karun legendaris "One Piece" demi menjadi Raja Bajak Laut.
+            </p>
+
+            <p class="trailer-title">🎬 Trailer Official</p>
+            <div class="video-box">
+                <div class="video-buttons">
+                    <button onclick="tekanPause(1)">Play / Pause</button>
+                    <button onclick="menjadiBig(1)">Big</button>
+                    <button onclick="menjadiSmall(1)">Small</button>
+                    <button onclick="menjadiNormal(1)">Normal</button>
+                </div>
+                <video id="video1" controls>
+                    <source src="THE ONE PIECE _ Official Teaser.mp4" type="video/mp4">
+                    Browser anda tidak mendukung video HTML5.
+                </video>
+            </div>
         </div>
-    </div>
 
-    <!-- FILM 2 -->
-    <div class="film-card">
-        <h2 class="film-title">
-            <span class="number">2</span>
-            Harry Potter
-        </h2>
-
-        <p>
-            <b>Genre:</b>
-            <span class="genre">Fantasy, Adventure, Mystery</span>
-        </p>
-
-        <p>
-            <span class="rating">⭐ 4.8/5</span>
-            &nbsp; | &nbsp; 📅 2001
-        </p>
-
-        <hr>
-
-        <p class="sinopsis">
-            <b>Sinopsis:</b>
-            Harry Potter mengisahkan kehidupan seorang penyihir
-            muda bernama Harry Potter bersama sahabatnya,
-            Ron Weasley dan Hermione Granger, di Sekolah Sihir
-            Hogwarts. Petualangan mereka berpusat pada perjuangan
-            Harry untuk mengalahkan penyihir jahat bernama
-            Lord Voldemort.
-        </p>
-
-        <p class="trailer-title">🎬 Trailer</p>
-
-        <div class="video-box">
-            <div class="video-buttons">
-                <button onclick="tekanPause(2)">▶ Play / ⏸ Pause</button>
-                <button onclick="menjadiBig(2)">🔍 Big</button>
-                <button onclick="menjadiSmall(2)">🔎 Small</button>
-                <button onclick="menjadiNormal(2)">↔ Normal</button>
+        <!-- FILM 2 -->
+        <div class="film-card">
+            <h2 class="film-title">
+                <span class="nomor">2.</span> Harry Potter 💡
+            </h2>
+            <div class="film-info">
+                <p><b>Genre:</b> <span class="genre">Fantasy, Adventure, Mystery</span></p>
+                <p><span class="rating">⭐ 4.8/5</span> &nbsp;|&nbsp; 📅 2001</p>
             </div>
 
-            <video id="video2" controls>
-                <source src="Harry Potter Official Teaser Trailer.mp4" type="video/mp4">
-                Browser anda tidak mendukung video HTML5.
-            </video>
+            <p class="sinopsis">
+                <b>Sinopsis:</b> Harry Potter mengisahkan kehidupan seorang penyihir muda bernama Harry Potter bersama sahabatnya, Ron Weasley dan Hermione Granger, di Sekolah Sihir Hogwarts. Petualangan mereka berpusat pada perjuangan Harry mengalahkan Lord Voldemort.
+            </p>
+
+            <p class="trailer-title">🎬 Trailer Official</p>
+            <div class="video-box">
+                <div class="video-buttons">
+                    <button onclick="tekanPause(2)">Play / Pause</button>
+                    <button onclick="menjadiBig(2)">Big</button>
+                    <button onclick="menjadiSmall(2)">Small</button>
+                    <button onclick="menjadiNormal(2)">Normal</button>
+                </div>
+                <video id="video2" controls>
+                    <source src="Harry Potter Official Teaser Trailer.mp4" type="video/mp4">
+                    Browser anda tidak mendukung video HTML5.
+                </video>
+            </div>
         </div>
-    </div>
 
-    <!-- FILM 3 -->
-    <div class="film-card">
-        <h2 class="film-title">
-            <span class="number">3</span>
-            Spider-Man: Into the Spider-Verse
-        </h2>
-
-        <p>
-            <b>Genre:</b>
-            <span class="genre">Animation, Action, Adventure</span>
-        </p>
-
-        <p>
-            <span class="rating">⭐ 4.7/5</span>
-            &nbsp; | &nbsp; 📅 2018
-        </p>
-
-        <hr>
-
-        <p class="sinopsis">
-            <b>Sinopsis:</b>
-            Mengisahkan Miles Morales, seorang remaja asal
-            Brooklyn yang mendapatkan kekuatan laba-laba dan
-            menjadi Spider-Man baru. Ia bertemu dengan para
-            Spider-Hero dari berbagai dimensi alternatif untuk
-            bersama-sama menghentikan ancaman yang dapat
-            menghancurkan seluruh semesta.
-        </p>
-
-        <p class="trailer-title">🎬 Trailer</p>
-
-        <div class="video-box">
-            <div class="video-buttons">
-                <button onclick="tekanPause(3)">▶ Play / ⏸ Pause</button>
-                <button onclick="menjadiBig(3)">🔍 Big</button>
-                <button onclick="menjadiSmall(3)">🔎 Small</button>
-                <button onclick="menjadiNormal(3)">↔ Normal</button>
+        <!-- FILM 3 -->
+        <div class="film-card">
+            <h2 class="film-title">
+                <span class="nomor">3.</span> Spider-Man: Into the Spider-Verse 💡
+            </h2>
+            <div class="film-info">
+                <p><b>Genre:</b> <span class="genre">Animation, Action, Adventure</span></p>
+                <p><span class="rating">⭐ 4.7/5</span> &nbsp;|&nbsp; 📅 2018</p>
             </div>
 
-            <video id="video3" controls>
-                <source src="SPIDER-MAN.mp4" type="video/mp4">
-                Browser anda tidak mendukung video HTML5.
-            </video>
+            <p class="sinopsis">
+                <b>Sinopsis:</b> Mengisahkan Miles Morales, seorang remaja asal Brooklyn yang mendapatkan kekuatan laba-laba dan menjadi Spider-Man baru. Ia bertemu para Spider-Hero dari berbagai dimensi alternatif untuk menghentikan ancaman semesta.
+            </p>
+
+            <p class="trailer-title">🎬 Trailer Official</p>
+            <div class="video-box">
+                <div class="video-buttons">
+                    <button onclick="tekanPause(3)">Play / Pause</button>
+                    <button onclick="menjadiBig(3)">Big</button>
+                    <button onclick="menjadiSmall(3)">Small</button>
+                    <button onclick="menjadiNormal(3)">Normal</button>
+                </div>
+                <video id="video3" controls>
+                    <source src="SPIDER-MAN.mp4" type="video/mp4">
+                    Browser anda tidak mendukung video HTML5.
+                </video>
+            </div>
         </div>
-    </div>
 
-    <!-- FILM 4 -->
-    <div class="film-card">
-        <h2 class="film-title">
-            <span class="number">4</span>
-            Avengers: Endgame
-        </h2>
-
-        <p>
-            <b>Genre:</b>
-            <span class="genre">Action, Adventure, Sci-Fi</span>
-        </p>
-
-        <p>
-            <span class="rating">⭐ 4.9/5</span>
-            &nbsp; | &nbsp; 📅 2019
-        </p>
-
-        <hr>
-
-        <p class="sinopsis">
-            <b>Sinopsis:</b>
-            Setelah peristiwa tragis saat Thanos memusnahkan
-            separuh kehidupan di alam semesta, para anggota
-            Avengers yang tersisa harus bersatu kembali dan
-            menemukan cara untuk membalikkan tindakan Thanos
-            demi mengembalikan kedamaian dunia.
-        </p>
-
-        <p class="trailer-title">🎬 Trailer</p>
-
-        <div class="video-box">
-            <div class="video-buttons">
-                <button onclick="tekanPause(4)">▶ Play / ⏸ Pause</button>
-                <button onclick="menjadiBig(4)">🔍 Big</button>
-                <button onclick="menjadiSmall(4)">🔎 Small</button>
-                <button onclick="menjadiNormal(4)">↔ Normal</button>
+        <!-- FILM 4 -->
+        <div class="film-card">
+            <h2 class="film-title">
+                <span class="nomor">4.</span> Avengers: Endgame 💡
+            </h2>
+            <div class="film-info">
+                <p><b>Genre:</b> <span class="genre">Action, Adventure, Sci-Fi</span></p>
+                <p><span class="rating">⭐ 4.9/5</span> &nbsp;|&nbsp; 📅 2019</p>
             </div>
 
-            <video id="video4" controls>
-                <source src="Marvel Studios Avengers.mp4" type="video/mp4">
-                Browser anda tidak mendukung video HTML5.
-            </video>
+            <p class="sinopsis">
+                <b>Sinopsis:</b> Setelah peristiwa tragis saat Thanos memusnahkan separuh kehidupan di alam semesta, para anggota Avengers yang tersisa harus bersatu kembali untuk membalikkan tindakan Thanos demi mengembalikan kedamaian dunia.
+            </p>
+
+            <p class="trailer-title">🎬 Trailer Official</p>
+            <div class="video-box">
+                <div class="video-buttons">
+                    <button onclick="tekanPause(4)">Play / Pause</button>
+                    <button onclick="menjadiBig(4)">Big</button>
+                    <button onclick="menjadiSmall(4)">Small</button>
+                    <button onclick="menjadiNormal(4)">Normal</button>
+                </div>
+                <video id="video4" controls>
+                    <source src="Marvel Studios Avengers.mp4" type="video/mp4">
+                    Browser anda tidak mendukung video HTML5.
+                </video>
+            </div>
         </div>
-    </div>
 
-    <!-- FILM 5 -->
-    <div class="film-card">
-        <h2 class="film-title">
-            <span class="number">5</span>
-            Interstellar
-        </h2>
-
-        <p>
-            <b>Genre:</b>
-            <span class="genre">Sci-Fi, Adventure, Drama</span>
-        </p>
-
-        <p>
-            <span class="rating">⭐ 4.8/5</span>
-            &nbsp; | &nbsp; 📅 2014
-        </p>
-
-        <hr>
-
-        <p class="sinopsis">
-            <b>Sinopsis:</b>
-            Di masa depan ketika Bumi mengalami krisis pangan
-            global, sekelompok astronot melakukan perjalanan
-            melewati lubang cacing (wormhole) di luar angkasa
-            untuk mencari planet baru yang layak huni demi
-            kelangsungan hidup umat manusia.
-        </p>
-
-        <p class="trailer-title">🎬 Trailer</p>
-
-        <div class="video-box">
-            <div class="video-buttons">
-                <button onclick="tekanPause(5)">▶ Play / ⏸ Pause</button>
-                <button onclick="menjadiBig(5)">🔍 Big</button>
-                <button onclick="menjadiSmall(5)">🔎 Small</button>
-                <button onclick="menjadiNormal(5)">↔ Normal</button>
+        <!-- FILM 5 -->
+        <div class="film-card">
+            <h2 class="film-title">
+                <span class="nomor">5.</span> Interstellar 💡
+            </h2>
+            <div class="film-info">
+                <p><b>Genre:</b> <span class="genre">Sci-Fi, Adventure, Drama</span></p>
+                <p><span class="rating">⭐ 4.8/5</span> &nbsp;|&nbsp; 📅 2014</p>
             </div>
 
-            <video id="video5" controls>
-                <source src="Interstellar - Trailer - Official.mp4" type="video/mp4">
-                Browser anda tidak mendukung video HTML5.
-            </video>
+            <p class="sinopsis">
+                <b>Sinopsis:</b> Di masa depan ketika Bumi mengalami krisis pangan global, sekelompok astronot melakukan perjalanan melewati lubang cacing (wormhole) di luar angkasa untuk mencari planet baru yang layak huni demi kelangsungan hidup umat manusia.
+            </p>
+
+            <p class="trailer-title">🎬 Trailer Official</p>
+            <div class="video-box">
+                <div class="video-buttons">
+                    <button onclick="tekanPause(5)">Play / Pause</button>
+                    <button onclick="menjadiBig(5)">Big</button>
+                    <button onclick="menjadiSmall(5)">Small</button>
+                    <button onclick="menjadiNormal(5)">Normal</button>
+                </div>
+                <video id="video5" controls>
+                    <source src="Interstellar - Trailer - Official.mp4" type="video/mp4">
+                    Browser anda tidak mendukung video HTML5.
+                </video>
+            </div>
         </div>
+
+        <!-- TABEL REKOMENDASI FILM (HANYA 2 RATING TERTINGGI) -->
+        <div class="rekomendasi-section">
+            <h3 class="rekomendasi-title">Rekomendasi Film</h3>
+            <table class="tbl-rekomendasi">
+                <thead>
+                    <tr>
+                        <th>Poster</th>
+                        <th>Judul Film</th>
+                        <th>Genre</th>
+                        <th>Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="avengers.jpeg" alt="Avengers: Endgame"></td>
+                        <td>Avengers: Endgame</td>
+                        <td>Action, Adventure, Sci-Fi</td>
+                        <td>4.9/5</td>
+                    </tr>
+                    <tr>
+                        <td><img src="harry potter.jpeg" alt="Harry Potter"></td>
+                        <td>Harry Potter</td>
+                        <td>Fantasy, Adventure, Mystery</td>
+                        <td>4.8/5</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 
-</div>
+    <!-- FOOTER -->
+    <footer>
+        <h2>🎬 Movie Space</h2>
+        <p>Jelajahi berbagai film dan temukan informasi yang kamu cari.</p>
+        <p>
+            <a href="index.html">🏠 Home</a> &nbsp; | &nbsp;
+            <a href="profil.html">👤 Profil</a> &nbsp; | &nbsp;
+            <a href="daftar film.html">🎞️ Daftar Film</a> &nbsp; | &nbsp;
+            <a href="gallery.html">🖼️ Gallery</a> &nbsp; | &nbsp;
+            <a href="kontak.html">📧 Kontak</a>
+        </p>
+        <hr>
+        <p><b>Admin Web, Me</b></p>
+        <p><b>&copy; 2026 Hak Cipta Dilindungi Undang-Undang.</b></p>
+    </footer>
 
-<!-- FOOTER -->
-<footer>
-    <p>
-        <a href="index.html">🏠 Home</a>
-        &nbsp; | &nbsp;
-        <a href="profil.html">👤 Profil</a>
-        &nbsp; | &nbsp;
-        <a href="gallery.html">🖼️ Gallery</a>
-        &nbsp; | &nbsp;
-        <a href="kontak.html">📧 Kontak</a>
-    </p>
-
-    <p><b>Admin Web, Me</b></p>
-
-    <p>
-        &copy; 2026 Movie Space - Hak Cipta Dilindungi Undang-Undang.
-    </p>
-</footer>
-
-<!-- JAVASCRIPT -->
-<script>
-function tekanPause(nomor){
-    var video=document.getElementById("video"+nomor);
-    if(video.paused){video.play()}else{video.pause()}
-}
-
-function menjadiBig(nomor){
-    var video=document.getElementById("video"+nomor);
-    video.style.width="100%";
-    video.style.maxWidth="800px";
-}
-
-function menjadiSmall(nomor){
-    var video=document.getElementById("video"+nomor);
-    video.style.width="60%";
-    video.style.maxWidth="450px";
-}
-
-function menjadiNormal(nomor){
-    var video=document.getElementById("video"+nomor);
-    video.style.width="100%";
-    video.style.maxWidth="650px";
-}
-</script>
-
+    <!-- JAVASCRIPT -->
+    <script>
+        function tekanPause(nomor){
+            var video=document.getElementById("video"+nomor);
+            if(video.paused){video.play()}else{video.pause()}
+        }
+        function menjadiBig(nomor){
+            var video=document.getElementById("video"+nomor);
+            video.style.width="100%";
+            video.style.maxWidth="750px";
+        }
+        function menjadiSmall(nomor){
+            var video=document.getElementById("video"+nomor);
+            video.style.width="60%";
+            video.style.maxWidth="350px";
+        }
+        function menjadiNormal(nomor){
+            var video=document.getElementById("video"+nomor);
+            video.style.width="100%";
+            video.style.maxWidth="550px";
+        }
+    </script>
 </body>
 </html>

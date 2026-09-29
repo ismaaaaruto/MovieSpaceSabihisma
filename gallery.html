@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
+    <meta charset="UTF-8">
     <title>Gallery Film - Movie Space</title>
     <link rel="icon" type="image/x-icon" href="trejo.jpg">
     <meta name="keywords" content="animation, fantasy, action, sci-fi">
@@ -8,74 +9,76 @@
 
     <style>
         *{box-sizing:border-box}
-        body{margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#2c3e50}
+        body{margin:0;font-family:Arial,sans-serif;background:#15152b;color:#eee}
         a{text-decoration:none}
 
         /* HEADER */
-        header{background:white;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:100}
-        .logo{display:flex;align-items:center;gap:10px}
-        .logo img{width:48px;height:48px;border-radius:50%;object-fit:cover}
-        .logo-text h2{margin:0;font-size:20px}
-        .logo-text p{margin:2px 0 0;color:#777;font-size:12px}
-        nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
-        nav a{color:#2c3e50;font-weight:bold;padding:9px 12px}
-        nav a:hover,nav a.active{color:#2980b9}
-
-        /* GARIS */
-        .top-line{height:4px;background:blue;border:0;margin:0}
+        header{background:#101022;padding:12px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #302f50;position:sticky;top:0;z-index:100}
+        .logo-area{display:flex;align-items:center;gap:10px}
+        .logo{width:50px;height:50px;border-radius:50%;object-fit:cover}
+        .logo-text h1{margin:0;font-size:21px;color:#fff}
+        .logo-text h3{margin:3px 0 0;font-size:14px;color:#e8c65a}
+        nav{display:flex;gap:3px;flex-wrap:wrap;justify-content:center}
+        nav a{color:#ddd;font-weight:bold;padding:9px 11px;border-radius:5px}
+        nav a:hover,nav a.active{background:#e8c65a;color:#15152b}
+        .top-line{height:3px;background:#e8c65a;border:0;margin:0}
 
         /* HERO */
-        .hero{width:90%;max-width:1000px;margin:30px auto;padding:45px 20px;background:#2c3e50;color:white;text-align:center;border-radius:12px}
-        .hero h1{margin:0 0 12px;font-size:36px}
-        .hero p{margin:7px 0;line-height:1.6;color:#ecf0f1}
+        .hero{width:92%;max-width:1050px;margin:22px auto;padding:50px 25px;background:linear-gradient(rgba(21,21,43,.65),rgba(21,21,43,.9)),url("avengers.jpeg") center/cover;color:#fff;border-radius:10px;text-align:center}
+        .hero h1{font-size:36px;margin:0 0 10px;color:#fff}
+        .hero p{font-size:15px;line-height:1.6;margin:6px 0;color:#bbb}
 
-        /* GALLERY */
-        .gallery-title{width:90%;max-width:1000px;margin:35px auto 20px;text-align:center}
-        .gallery-title h2{margin:0 0 8px;color:#2980b9}
-        .gallery-title p{margin:0;color:#666}
+        /* GALLERY TITLE */
+        .gallery-title{width:92%;max-width:1000px;margin:35px auto 20px;text-align:center}
+        .gallery-title h2{margin:0 0 8px;color:#e8c65a;font-size:26px}
+        .gallery-title p{margin:0;color:#aaa}
 
-        .gallery-container{width:90%;max-width:1100px;margin:auto;display:flex;gap:20px;overflow-x:auto;padding:10px 5px 25px;scroll-snap-type:x mandatory}
+        /* GALLERY CONTAINER (SCROLL HORIZONTAL) */
+        .gallery-container{width:92%;max-width:1100px;margin:auto;display:flex;gap:20px;overflow-x:auto;padding:10px 5px 25px;scroll-snap-type:x mandatory}
         .gallery-container::-webkit-scrollbar{height:8px}
-        .gallery-container::-webkit-scrollbar-thumb{background:#2980b9;border-radius:10px}
-        .gallery-container::-webkit-scrollbar-track{background:#ddd;border-radius:10px}
+        .gallery-container::-webkit-scrollbar-thumb{background:#e8c65a;border-radius:10px}
+        .gallery-container::-webkit-scrollbar-track{background:#20203b;border-radius:10px}
 
-        .movie-card{flex:0 0 200px;text-align:center;scroll-snap-align:start;border-bottom:3px solid #2980b9;padding-bottom:18px}
-        .movie-card img{width:100%;height:285px;object-fit:cover;border-radius:8px;transition:.3s}
-        .movie-card:hover img{transform:scale(1.03)}
-        .movie-card h3{margin:14px 0 9px;font-size:18px;color:#2c3e50}
-        .movie-card p{font-size:13px;line-height:1.5;margin:7px 0;color:#555}
-        .genre{color:#2980b9;font-weight:bold}
-        .rating{color:#e67e22;font-weight:bold}
+        /* MOVIE CARD */
+        .movie-card{flex:0 0 210px;text-align:center;scroll-snap-align:start;background:#20203b;padding:15px;border-radius:8px;border-bottom:3px solid #e8c65a;transition:.3s}
+        .movie-card:hover{transform:translateY(-5px)}
+        .movie-card img{width:100%;height:270px;object-fit:cover;border-radius:6px;transition:.3s}
+        .movie-card:hover img{transform:scale(1.02)}
+        .movie-card h3{margin:12px 0 8px;font-size:18px;color:#fff}
+        .movie-card p{font-size:13px;line-height:1.5;margin:6px 0;color:#bbb}
+        .genre{color:#e8c65a;font-weight:bold}
+        .rating{color:#e8c65a;font-weight:bold}
 
-        /* INFO */
-        .info{width:90%;max-width:1000px;margin:35px auto;padding:20px 0;text-align:center;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
-        .info h2{margin:0 0 10px;color:#2c3e50}
-        .info p{color:#666;line-height:1.6}
+        /* INFO & TOMBOL */
+        .info{width:92%;max-width:1000px;margin:35px auto;padding:25px 0;text-align:center;border-top:1px solid #363653;border-bottom:1px solid #363653}
+        .info h2{margin:0 0 10px;color:#e8c65a}
+        .info p{color:#bbb;line-height:1.6;margin-bottom:20px}
 
-        .button{display:inline-block;margin:5px;padding:10px 17px;background:#2980b9;color:white;border-radius:5px;font-weight:bold;transition:.3s}
-        .button:hover{background:#2c3e50;transform:translateY(-2px)}
+        .button{display:inline-block;margin:5px;padding:11px 20px;background:#e8c65a;color:#15152b;border-radius:5px;font-weight:bold;transition:.3s}
+        .button:hover{background:#fff;transform:translateY(-2px)}
 
         /* FOOTER */
-        footer{background:#2c3e50;color:white;text-align:center;padding:25px 15px;margin-top:40px}
-        footer h2{margin-top:0}
-        footer p{margin:7px 0;line-height:1.7}
-        footer a{color:white}
-        footer a:hover{color:#5dade2}
-        footer hr{border:0;border-top:1px solid rgba(255,255,255,.3);margin:18px 0}
+        footer{background:#101022;color:#ddd;margin-top:40px;padding:25px 15px;text-align:center}
+        footer h2{color:#e8c65a}
+        footer p{line-height:1.7}
+        footer a{color:#ddd}
+        footer a:hover{color:#e8c65a}
+        footer hr{border:0;border-top:1px solid #363653;margin:18px 0}
 
         /* RESPONSIVE */
         @media(max-width:700px){
-            header{flex-direction:column;gap:10px;padding:12px 10px}
-            nav{width:100%}
-            nav a{font-size:12px;padding:7px 9px}
+            header{display:block;text-align:center;padding:12px 10px}
+            .logo-area{justify-content:center}
+            nav{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+            nav a{font-size:12px;padding:8px 3px}
             .hero{width:94%;padding:35px 15px}
             .hero h1{font-size:28px}
             .hero p{font-size:14px}
             .gallery-title,.gallery-container,.info{width:94%}
-            .movie-card{flex-basis:180px}
-            .movie-card img{height:260px}
-            .info{padding:18px 0}
+            .movie-card{flex-basis:180px;padding:12px}
+            .movie-card img{height:230px}
         }
+        @media(max-width:430px){nav{grid-template-columns:repeat(2,1fr)}}
     </style>
 </head>
 
@@ -83,35 +86,28 @@
 
     <!-- HEADER -->
     <header>
-        <div class="logo">
-            <img src="trejo.jpg" alt="Logo Movie Space">
+        <div class="logo-area">
+            <img class="logo" src="trejo.jpg" alt="Logo Movie Space">
             <div class="logo-text">
-                <h2>🎬 MOVIE SPACE</h2>
-                <p>Sabihisma Fetra</p>
+                <h1>MOVIE SPACE</h1>
+                <h3>Sabihisma Fetra</h3>
             </div>
         </div>
 
         <nav>
             <a href="index.html">🏠 Home</a>
-            <a href="profil.html">♟️ Profil</a>
-            <a href="daftar film.html">🎞️ Film</a>
+            <a href="profil.html">👤 Profil</a>
+            <a href="daftar film.html">🎞️ Daftar Film</a>
             <a href="gallery.html" class="active">🖼️ Gallery</a>
-            <a href="kontak.html">✉️ Kontak</a>
+            <a href="kontak.html">📧 Kontak</a>
         </nav>
     </header>
 
     <hr class="top-line">
-
-    <!-- HERO -->
-    <section class="hero">
-        <h1>🖼️ Gallery Film</h1>
-        <p>Lihat berbagai poster film pilihan lengkap dengan genre, tahun rilis, dan rating.</p>
-        <p>🎬 Poster &nbsp; • &nbsp; ⭐ Rating &nbsp; • &nbsp; 🎞️ Film</p>
-    </section>
-
+    
     <!-- JUDUL GALLERY -->
     <section class="gallery-title">
-        <h2>🎬 Koleksi Film</h2>
+        <h2>🎬 Koleksi Poster Film</h2>
         <p>Geser ke samping untuk melihat semua koleksi film.</p>
     </section>
 
@@ -123,7 +119,7 @@
             <h3>One Piece</h3>
             <p><b>Genre:</b><br><span class="genre">Action, Adventure, Fantasy</span></p>
             <p><b>Tahun:</b> 2026</p>
-            <p><b>Rating:</b><br><span class="rating">★★★★☆ 4.5/5</span></p>
+            <p><b>Rating:</b><br><span class="rating">⭐ 4.5/5</span></p>
         </div>
 
         <div class="movie-card">
@@ -131,7 +127,7 @@
             <h3>Harry Potter</h3>
             <p><b>Genre:</b><br><span class="genre">Fantasy, Adventure, Mystery</span></p>
             <p><b>Tahun:</b> 2001</p>
-            <p><b>Rating:</b><br><span class="rating">★★★★★ 4.8/5</span></p>
+            <p><b>Rating:</b><br><span class="rating">⭐ 4.8/5</span></p>
         </div>
 
         <div class="movie-card">
@@ -139,7 +135,7 @@
             <h3>Spider-Man</h3>
             <p><b>Genre:</b><br><span class="genre">Animation, Action, Adventure</span></p>
             <p><b>Tahun:</b> 2018</p>
-            <p><b>Rating:</b><br><span class="rating">★★★★★ 4.7/5</span></p>
+            <p><b>Rating:</b><br><span class="rating">⭐ 4.7/5</span></p>
         </div>
 
         <div class="movie-card">
@@ -147,7 +143,7 @@
             <h3>Avengers: Endgame</h3>
             <p><b>Genre:</b><br><span class="genre">Action, Adventure, Sci-Fi</span></p>
             <p><b>Tahun:</b> 2019</p>
-            <p><b>Rating:</b><br><span class="rating">★★★★★ 4.9/5</span></p>
+            <p><b>Rating:</b><br><span class="rating">⭐ 4.9/5</span></p>
         </div>
 
         <div class="movie-card">
@@ -155,12 +151,12 @@
             <h3>Interstellar</h3>
             <p><b>Genre:</b><br><span class="genre">Sci-Fi, Adventure, Drama</span></p>
             <p><b>Tahun:</b> 2014</p>
-            <p><b>Rating:</b><br><span class="rating">★★★★★ 4.8/5</span></p>
+            <p><b>Rating:</b><br><span class="rating">⭐ 4.8/5</span></p>
         </div>
 
     </div>
 
-    <!-- INFO -->
+    <!-- INFO & NAVIGASI BANTUAN -->
     <section class="info">
         <h2>🎬 Movie Space</h2>
         <p>Jelajahi berbagai poster film favoritmu di Movie Space.</p>

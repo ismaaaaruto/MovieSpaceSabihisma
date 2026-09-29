@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
     <title>Profil Website - Movie Space</title>
@@ -8,208 +8,233 @@
 
     <style>
         *{box-sizing:border-box}
-        body{margin:0;font-family:Arial,sans-serif;background:#f5f7fa;color:#2c3e50}
+        body{margin:0;font-family:Arial,sans-serif;background:#15152b;color:#eee}
         a{text-decoration:none}
-        header{background:white;padding:8px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd}
-        .logo{display:flex;align-items:center;gap:10px}
-        .logo img{width:48px;height:48px;border-radius:50%;object-fit:cover}
-        .logo h2{margin:0;font-size:20px}
-        .logo p{margin:2px 0 0;color:#777;font-size:12px}
-        nav{display:flex;gap:5px}
-        nav a{color:#2c3e50;font-weight:bold;padding:9px 12px}
-        nav a:hover,nav a.active{color:#2980b9}
-        .hero{width:90%;margin:30px auto;padding:45px 25px;background:#2c3e50;color:white;text-align:center;border-radius:12px}
-        .hero h1{font-size:36px;margin:0 0 10px}
-        .hero p{line-height:1.6;margin:8px 0}
-        .content{width:90%;max-width:1000px;margin:35px auto;padding:10px 0;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
-        .content h2{color:#2980b9}
-        .content p{line-height:1.7;color:#555}
-        .section-title{text-align:center;margin:40px 0 20px}
-        .section-title h2{margin:0}
-        .section-title p{color:#666}
-        
-        /* FITUR SCROLL */
-        .feature-scroll{width:90%;max-width:1100px;margin:auto;display:flex;gap:18px;overflow-x:auto;padding:5px 5px 18px;scroll-snap-type:x mandatory}
-        .feature{min-width:250px;flex:0 0 250px;text-align:center;padding:20px 15px;background:white;border-top:3px solid #2980b9;scroll-snap-align:start}
-        .feature-icon{font-size:35px}
-        .feature h3{color:#2980b9;margin:10px 0}
-        .feature p{font-size:14px;line-height:1.6;color:#666}
-        .feature-scroll::-webkit-scrollbar{height:7px}
-        .feature-scroll::-webkit-scrollbar-thumb{background:#bbb;border-radius:10px}
-        
-        /* GENRE SCROLL */
-        .genre-scroll{width:90%;max-width:1000px;margin:auto;display:flex;gap:10px;overflow-x:auto;padding:5px 2px 15px}
-        .genre{flex:0 0 auto;padding:9px 17px;background:white;border:1px solid #2980b9;border-radius:20px;color:#2980b9;font-weight:bold}
-        .genre:hover{background:#2980b9;color:white}
-        .genre-scroll::-webkit-scrollbar{height:6px}
-        .genre-scroll::-webkit-scrollbar-thumb{background:#bbb;border-radius:10px}
-        
-        /* STATISTIK */
-        .stats{width:90%;max-width:800px;margin:25px auto;display:flex;justify-content:space-around;text-align:center;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:20px 0}
-        .stat{flex:1;border-right:1px solid #ddd}
-        .stat:last-child{border:0}
-        .stat h2{margin:0;color:#2980b9;font-size:28px}
-        .stat p{margin:7px 0 0;color:#666}
-        
-        .buttons{text-align:center;margin:35px 0}
-        .button{display:inline-block;margin:5px;padding:11px 20px;background:#2980b9;color:white;border-radius:5px;font-weight:bold}
-        .button:hover{background:#2c3e50}
-        
-        footer{background:#2c3e50;color:white;text-align:center;padding:25px 15px;margin-top:40px}
-        footer h2{margin-top:0}
-        footer p{line-height:1.7}
-        footer a{color:white}
-        footer a:hover{color:#5dade2}
-        footer hr{border:0;border-top:1px solid rgba(255,255,255,.3);margin:18px 0}
 
+        /* HEADER */
+        header{background:#101022;padding:12px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #302f50}
+        .logo-area{display:flex;align-items:center;gap:10px}
+        .logo{width:50px;height:50px;border-radius:50%;object-fit:cover}
+        .logo-text h1{margin:0;font-size:21px;color:#fff}
+        .logo-text h3{margin:3px 0 0;font-size:14px;color:#e8c65a}
+        nav{display:flex;gap:3px;flex-wrap:wrap;justify-content:center}
+        nav a{color:#ddd;font-weight:bold;padding:9px 11px;border-radius:5px}
+        nav a:hover,nav a.active{background:#e8c65a;color:#15152b}
+        .top-line{height:3px;background:#e8c65a;border:0;margin:0}
+
+        /* HERO */
+        .hero{width:92%;max-width:1050px;margin:22px auto;padding:55px 25px;background:linear-gradient(rgba(21,21,43,.75),rgba(21,21,43,.95)),url("avengers.jpeg") center/cover;color:#fff;border-radius:10px;text-align:center}
+        .hero h1{font-size:38px;margin:0 0 12px;color:#fff}
+        .hero p{font-size:16px;line-height:1.6;margin:8px 0;color:#ddd}
+
+        /* SECTION TITLE */
+        .section-title{text-align:center;margin:35px 0 20px}
+        .section-title h2{margin:0 0 7px;color:#e8c65a}
+        .section-title p{margin:0;color:#aaa}
+
+        /* CONTENT / TENTANG */
+        .content{width:92%;max-width:1000px;margin:30px auto;padding:20px 0;border-top:1px solid #363653;border-bottom:1px solid #363653}
+        .content h2{color:#e8c65a;margin-top:0}
+        .content p{line-height:1.7;color:#bbb}
+
+        /* FITUR SCROLL */
+        .feature-scroll{width:92%;max-width:1100px;margin:auto;display:flex;gap:18px;overflow-x:auto;padding:5px 5px 18px;scroll-snap-type:x mandatory}
+        .feature{min-width:240px;flex:0 0 240px;text-align:center;padding:22px 15px;background:#20203b;border-top:3px solid #e8c65a;border-radius:8px;scroll-snap-align:start}
+        .feature-icon{font-size:35px;margin-bottom:8px}
+        .feature h3{color:#fff;margin:8px 0}
+        .feature p{font-size:13px;line-height:1.6;color:#bbb;margin:0}
+        .feature-scroll::-webkit-scrollbar{height:7px}
+        .feature-scroll::-webkit-scrollbar-thumb{background:#363653;border-radius:10px}
+
+        /* GENRE SCROLL */
+        .genre-scroll{width:92%;max-width:1000px;margin:auto;display:flex;gap:10px;overflow-x:auto;padding:5px 2px 15px}
+        .genre{flex:0 0 auto;padding:9px 18px;background:#20203b;border:1px solid #e8c65a;border-radius:20px;color:#e8c65a;font-weight:bold;font-size:14px}
+        .genre:hover{background:#e8c65a;color:#15152b}
+        .genre-scroll::-webkit-scrollbar{height:6px}
+        .genre-scroll::-webkit-scrollbar-thumb{background:#363653;border-radius:10px}
+
+        /* STATISTIK */
+        .stats{width:92%;max-width:850px;margin:30px auto;display:flex;justify-content:space-around;text-align:center;background:#20203b;border:1px solid #363653;border-radius:10px;padding:25px 15px}
+        .stat{flex:1;border-right:1px solid #363653}
+        .stat:last-child{border:0}
+        .stat h2{margin:0;color:#e8c65a;font-size:32px}
+        .stat p{margin:7px 0 0;color:#bbb;font-size:14px}
+
+        /* BUTTONS */
+        .buttons{text-align:center;margin:35px 0}
+        .hero-button{display:inline-block;margin:5px;padding:11px 20px;background:#e8c65a;color:#15152b;border-radius:5px;font-weight:bold}
+        .hero-button:hover{background:#fff}
+
+        /* FOOTER */
+        footer{background:#101022;color:#ddd;margin-top:40px;padding:25px 15px;text-align:center}
+        footer h2{color:#e8c65a;margin-top:0}
+        footer p{line-height:1.7}
+        footer a{color:#ddd}
+        footer a:hover{color:#e8c65a}
+        footer hr{border:0;border-top:1px solid #363653;margin:18px 0}
+
+        /* RESPONSIVE */
         @media(max-width:700px){
-            header{flex-direction:column;gap:10px;padding:12px 10px}
-            nav{width:100%;justify-content:center;flex-wrap:wrap}
-            nav a{font-size:12px;padding:7px 9px}
-            .hero{width:94%;padding:35px 15px}
+            header{display:block;text-align:center;padding:12px 10px}
+            .logo-area{justify-content:center}
+            .logo{width:50px;height:50px}
+            .logo-text{text-align:left}
+            .logo-text h1{font-size:19px}
+            .logo-text h3{font-size:14px}
+
+            nav{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+            nav a{font-size:12px;padding:8px 3px}
+
+            .hero{width:94%;padding:40px 15px;margin:20px auto}
             .hero h1{font-size:28px}
             .hero p{font-size:14px}
+
             .content{width:94%}
             .feature-scroll,.genre-scroll{width:94%}
-            .feature{min-width:230px}
-            .stats{width:94%}
-            .stat h2{font-size:23px}
-            .stat p{font-size:13px}
-            .button{font-size:14px}
+            .feature{min-width:210px}
+            
+            .stats{width:94%;padding:18px 10px}
+            .stat h2{font-size:24px}
+            .stat p{font-size:12px}
+
+            footer{padding:22px 10px}
+            footer p{font-size:13px}
+        }
+
+        @media(max-width:430px){
+            nav{grid-template-columns:repeat(2,1fr)}
+            nav a{font-size:12px}
+            .hero h1{font-size:25px}
+            .hero p{font-size:13px}
         }
     </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="logo">
-        <img src="trejo.jpg" alt="Logo Movie Space">
-        <div>
-            <h2>🎬 MOVIE SPACE</h2>
-            <p>Sabihisma Fetra</p>
+    <!-- HEADER -->
+    <header>
+        <div class="logo-area">
+            <img class="logo" src="trejo.jpg" alt="Logo Movie Space">
+
+            <div class="logo-text">
+                <h1>MOVIE SPACE</h1>
+                <h3>Sabihisma Fetra</h3>
+            </div>
+        </div>
+
+        <nav>
+            <a href="index.html">🏠 Home</a>
+            <a href="profil.html" class="active">👤 Profil</a>
+            <a href="daftar film.html">🎞️ Daftar Film</a>
+            <a href="gallery.html">🖼️ Gallery</a>
+            <a href="kontak.html">📧 Kontak</a>
+        </nav>
+    </header>
+
+    <hr class="top-line">
+
+    <!-- TENTANG -->
+    <section class="content">
+        <h2>🎬 Apa itu Movie Space?</h2>
+        <p><b>Movie Space</b> adalah website yang menyajikan informasi mengenai berbagai film pilihan dari berbagai belahan dunia. Pengunjung dapat mengeksplorasi informasi penting seperti poster film, genre, tahun rilis, rating, sinopsis, hingga trailer yang siap diputar langsung.</p>
+        <p>Koleksi kami mencakup berbagai genre populer mulai dari <b>Action, Adventure, Fantasy, Sci-Fi, Drama, Mystery</b>, hingga <b>Animation</b>.</p>
+    </section>
+
+    <!-- FITUR -->
+    <div class="section-title">
+        <h2>✨ Fitur Utama Website</h2>
+        <p>Geser ke samping untuk melihat halaman yang tersedia →</p>
+    </div>
+
+    <div class="feature-scroll">
+        <div class="feature">
+            <div class="feature-icon">🏠</div>
+            <h3>Home</h3>
+            <p>Halaman awal untuk melihat gambaran umum dan film terpopuler pilihan.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🎞️</div>
+            <h3>Daftar Film</h3>
+            <p>Koleksi film lengkap yang dilengkapi dengan sinopsis dan trailer interaktif.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">🖼️</div>
+            <h3>Gallery</h3>
+            <p>Galeri visual berisi poster film beserta detail genre, tahun, dan rating.</p>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">📧</div>
+            <h3>Kontak</h3>
+            <p>Halaman komunikasi untuk menghubungi atau memberikan masukan kepada pengelola.</p>
         </div>
     </div>
 
-    <nav>
-        <a href="index.html">🏠 Home</a>
-        <a href="profil.html" class="active">♟️ Profil</a>
-        <a href="daftar film.html">🎞️ Film</a>
-        <a href="gallery.html">🖼️ Gallery</a>
-        <a href="kontak.html">✉️ Kontak</a>
-    </nav>
-</header>
-
-<hr size="4" color="blue">
-
-<!-- HERO -->
-<section class="hero">
-    <h1>🎬 Tentang Movie Space</h1>
-    <p>Tempat sederhana untuk mengenal berbagai film pilihan dari berbagai genre.</p>
-    <p>🎞️ Film &nbsp; • &nbsp; ⭐ Rating &nbsp; • &nbsp; 🎬 Trailer</p>
-</section>
-
-<!-- TENTANG -->
-<section class="content">
-    <h2>🎬 Apa itu Movie Space?</h2>
-    <p><b>Movie Space</b> adalah website sederhana yang dibuat untuk menampilkan informasi mengenai beberapa film pilihan. Pengunjung dapat melihat poster, genre, tahun rilis, rating, sinopsis, dan trailer film.</p>
-    <p>Film yang tersedia berasal dari berbagai genre seperti <b>Action, Adventure, Fantasy, Sci-Fi, Drama, Mystery</b>, dan <b>Animation</b>.</p>
-</section>
-
-<!-- FITUR -->
-<div class="section-title">
-    <h2>✨ Yang Bisa Kamu Temukan</h2>
-    <p>Geser untuk melihat fitur lainnya →</p>
-</div>
-
-<div class="feature-scroll">
-    <div class="feature">
-        <div class="feature-icon">🏠</div>
-        <h3>Home</h3>
-        <p>Halaman awal untuk melihat gambaran singkat mengenai Movie Space dan beberapa film pilihan.</p>
+    <!-- GENRE -->
+    <div class="section-title">
+        <h2>🎭 Genre yang Tersedia</h2>
+        <p>Geser untuk melihat semua genre →</p>
     </div>
 
-    <div class="feature">
-        <div class="feature-icon">🎞️</div>
-        <h3>Daftar Film</h3>
-        <p>Menampilkan film lengkap dengan sinopsis dan trailer yang dapat diputar langsung.</p>
+    <div class="genre-scroll">
+        <span class="genre">Action</span>
+        <span class="genre">Adventure</span>
+        <span class="genre">Fantasy</span>
+        <span class="genre">Sci-Fi</span>
+        <span class="genre">Drama</span>
+        <span class="genre">Mystery</span>
+        <span class="genre">Animation</span>
     </div>
 
-    <div class="feature">
-        <div class="feature-icon">🖼️</div>
-        <h3>Gallery</h3>
-        <p>Berisi kumpulan poster film beserta genre, tahun rilis, dan rating masing-masing film.</p>
+    <!-- STATISTIK -->
+    <div class="section-title">
+        <h2>📊 Movie Space dalam Angka</h2>
     </div>
 
-    <div class="feature">
-        <div class="feature-icon">📧</div>
-        <h3>Kontak</h3>
-        <p>Halaman yang dapat digunakan untuk menghubungi pengelola Movie Space.</p>
-    </div>
-</div>
+    <div class="stats">
+        <div class="stat">
+            <h2>5+</h2>
+            <p>Film Pilihan</p>
+        </div>
 
-<!-- GENRE -->
-<div class="section-title">
-    <h2>🎭 Genre yang Tersedia</h2>
-    <p>Geser untuk melihat semua genre →</p>
-</div>
+        <div class="stat">
+            <h2>7+</h2>
+            <p>Genre Film</p>
+        </div>
 
-<div class="genre-scroll">
-    <span class="genre">Action</span>
-    <span class="genre">Adventure</span>
-    <span class="genre">Fantasy</span>
-    <span class="genre">Sci-Fi</span>
-    <span class="genre">Drama</span>
-    <span class="genre">Mystery</span>
-    <span class="genre">Animation</span>
-</div>
-
-<!-- STATISTIK -->
-<div class="section-title">
-    <h2>📊 Movie Space</h2>
-</div>
-
-<div class="stats">
-    <div class="stat">
-        <h2>5+</h2>
-        <p>Film Pilihan</p>
+        <div class="stat">
+            <h2>⭐ 4.8</h2>
+            <p>Rata-rata Rating</p>
+        </div>
     </div>
 
-    <div class="stat">
-        <h2>7+</h2>
-        <p>Genre Film</p>
+    <!-- BUTTON -->
+    <div class="buttons">
+        <a class="hero-button" href="daftar film.html">🎞️ Jelajahi Film</a>
+        <a class="hero-button" href="gallery.html">🖼️ Lihat Gallery</a>
     </div>
 
-    <div class="stat">
-        <h2>⭐</h2>
-        <p>Rating & Review</p>
-    </div>
-</div>
+    <!-- FOOTER -->
+    <footer>
+        <h2>🎬 Movie Space</h2>
+        <p>Jelajahi berbagai film dan temukan informasi yang kamu cari.</p>
 
-<!-- BUTTON -->
-<div class="buttons">
-    <a class="button" href="daftar film.html">🎞️ Mulai Lihat Film</a>
-    <a class="button" href="gallery.html">🖼️ Lihat Gallery</a>
-</div>
+        <p>
+            <a href="index.html">🏠 Home</a> &nbsp; | &nbsp;
+            <a href="profil.html">👤 Profil</a> &nbsp; | &nbsp;
+            <a href="daftar film.html">🎞️ Daftar Film</a> &nbsp; | &nbsp;
+            <a href="gallery.html">🖼️ Gallery</a> &nbsp; | &nbsp;
+            <a href="kontak.html">📧 Kontak</a>
+        </p>
 
-<!-- FOOTER -->
-<footer>
-    <h2>🎬 Movie Space</h2>
-    <p>Jelajahi berbagai film dan temukan informasi yang kamu cari.</p>
+        <hr>
 
-    <p>
-        <a href="index.html">🏠 Home</a> &nbsp; | &nbsp;
-        <a href="profil.html">👤 Profil</a> &nbsp; | &nbsp;
-        <a href="daftar film.html">🎞️ Daftar Film</a> &nbsp; | &nbsp;
-        <a href="gallery.html">🖼️ Gallery</a> &nbsp; | &nbsp;
-        <a href="kontak.html">📧 Kontak</a>
-    </p>
-
-    <hr>
-    <p><b>Admin Web, Me</b></p>
-    <p><b>&copy; 2026 Hak Cipta Dilindungi Undang-Undang.</b></p>
-</footer>
+        <p><b>Admin Web, Me</b></p>
+        <p><b>&copy; 2026 Hak Cipta Dilindungi Undang-Undang.</b></p>
+    </footer>
 
 </body>
 </html>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
     <title>Kontak - Movie Space</title>
@@ -8,74 +8,79 @@
 
     <style>
         *{box-sizing:border-box}
-        body{margin:0;font-family:Arial,sans-serif;background:#fff;color:#2c3e50}
+        body{margin:0;font-family:Arial,sans-serif;background:#15152b;color:#eee}
         a{text-decoration:none}
 
         /* HEADER */
-        header{background:white;padding:10px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:100}
-        .logo{display:flex;align-items:center;gap:10px}
-        .logo img{width:48px;height:48px;border-radius:50%;object-fit:cover}
-        .logo-text h2{margin:0;font-size:20px}
-        .logo-text p{margin:2px 0 0;color:#777;font-size:12px}
-        nav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center}
-        nav a{color:#2c3e50;font-weight:bold;padding:9px 12px}
-        nav a:hover,nav a.active{color:#2980b9}
-
-        /* GARIS */
-        .top-line{height:4px;background:blue;border:0;margin:0}
+        header{background:#101022;padding:12px 5%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #302f50}
+        .logo-area{display:flex;align-items:center;gap:10px}
+        .logo{width:50px;height:50px;border-radius:50%;object-fit:cover}
+        .logo-text h1{margin:0;font-size:21px;color:#fff}
+        .logo-text h3{margin:3px 0 0;font-size:14px;color:#e8c65a}
+        nav{display:flex;gap:3px;flex-wrap:wrap;justify-content:center}
+        nav a{color:#ddd;font-weight:bold;padding:9px 11px;border-radius:5px}
+        nav a:hover,nav a.active{background:#e8c65a;color:#15152b}
+        .top-line{height:3px;background:#e8c65a;border:0;margin:0}
 
         /* HERO */
-        .hero{width:90%;max-width:1000px;margin:30px auto;padding:45px 20px;background:#2c3e50;color:white;text-align:center;border-radius:12px}
-        .hero h1{margin:0 0 12px;font-size:36px}
-        .hero p{margin:7px 0;line-height:1.6;color:#ecf0f1}
+        .hero{width:92%;max-width:1050px;margin:22px auto;padding:45px 25px;background:linear-gradient(rgba(21,21,43,.75),rgba(21,21,43,.95)),url("avengers.jpeg") center/cover;color:#fff;border-radius:10px;text-align:center}
+        .hero h1{font-size:36px;margin:0 0 12px;color:#e8c65a}
+        .hero p{font-size:16px;line-height:1.6;margin:8px 0;color:#ddd}
 
-        /* CONTENT */
-        .container{width:85%;max-width:950px;margin:45px auto}
-        .intro{text-align:center;margin-bottom:45px}
-        .intro h2{margin-bottom:10px;color:#2c3e50}
-        .intro p{color:#666;line-height:1.7}
+        /* CONTAINER DUA KOLOM */
+        .contact-wrapper{width:92%;max-width:1000px;margin:35px auto;background:#20203b;padding:35px;border-radius:10px;border-top:3px solid #e8c65a}
+        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:20px}
 
-        .contact-content{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
-        .contact-section{padding:5px 0 25px;border-bottom:1px solid #ddd}
-        .contact-section h2{margin-top:0;color:#2980b9;font-size:22px}
-        .contact-section p{color:#555;line-height:1.8;margin:8px 0}
-
-        .data{margin:18px 0}
-        .data strong{display:inline-block;min-width:130px;color:#2c3e50}
-        .data span{color:#555}
-
-        .email{display:inline-block;margin-top:10px;color:#2980b9;font-size:18px;font-weight:bold}
-        .email:hover{color:#2c3e50;text-decoration:underline}
-
-        .note{margin-top:25px;padding-left:15px;border-left:4px solid #2980b9}
-        .note p{margin:5px 0;color:#666;line-height:1.7}
+        /* FORM */
+        .form-group{margin-bottom:18px}
+        .form-group label{display:block;margin-bottom:8px;font-weight:bold;color:#e8c65a;font-size:14px}
+        .form-group input, .form-group textarea{width:100%;padding:12px;background:#15152b;border:1px solid #363653;border-radius:6px;color:#fff;font-family:Arial,sans-serif;font-size:14px}
+        .form-group input:focus, .form-group textarea:focus{outline:none;border-color:#e8c65a}
+        .form-group textarea{height:140px;resize:vertical}
 
         /* BUTTON */
-        .buttons{text-align:center;margin:45px 0 20px}
-        .button{display:inline-block;margin:5px;padding:11px 20px;background:#2980b9;color:#fff;border-radius:7px;font-weight:bold;transition:.3s}
-        .button:hover{background:#2c3e50;transform:translateY(-2px)}
+        .btn-submit{display:inline-block;padding:12px 25px;background:#e8c65a;color:#15152b;border:none;border-radius:20px;font-weight:bold;cursor:pointer;font-size:14px;transition:0.3s}
+        .btn-submit:hover{background:#fff}
+
+        /* INFO & SOSMED */
+        .contact-info h3{color:#e8c65a;margin-top:0;margin-bottom:15px;font-size:20px}
+        .info-item{margin-bottom:15px}
+        .info-item label{display:block;color:#888;font-size:12px;text-transform:uppercase;margin-bottom:2px}
+        .info-item p,.info-item a{color:#eee;font-size:15px;margin:0}
+        .info-item a:hover{color:#e8c65a}
+
+        .social-links{margin-top:25px;display:flex;gap:12px}
+        .social-btn{display:inline-block;padding:8px 14px;background:#15152b;color:#e8c65a;border:1px solid #363653;border-radius:5px;font-size:13px;font-weight:bold}
+        .social-btn:hover{background:#e8c65a;color:#15152b}
+
+        /* NAVIGASI BAWAH */
+        .more{text-align:center;margin:30px 0}
+        .hero-button{display:inline-block;padding:11px 20px;background:#e8c65a;color:#15152b;border-radius:5px;font-weight:bold;margin:5px}
+        .hero-button:hover{background:#fff}
 
         /* FOOTER */
-        footer{background:#2c3e50;color:#fff;text-align:center;padding:25px 15px;margin-top:45px}
-        footer h2{margin:0 0 10px}
-        footer p{line-height:1.7;margin:8px 0}
-        footer a{color:#fff}
-        footer a:hover{color:#5dade2}
-        footer hr{border:0;border-top:1px solid rgba(255,255,255,.3);margin:18px 0}
+        footer{background:#101022;color:#ddd;margin-top:40px;padding:25px 15px;text-align:center}
+        footer h2{color:#e8c65a}
+        footer p{line-height:1.7}
+        footer a{color:#ddd}
+        footer a:hover{color:#e8c65a}
+        footer hr{border:0;border-top:1px solid #363653;margin:18px 0}
 
         /* RESPONSIVE */
         @media(max-width:700px){
-            header{flex-direction:column;gap:10px;padding:12px 10px}
-            nav{width:100%;justify-content:center}
-            nav a{font-size:12px;padding:7px 9px}
-            .hero{width:94%;padding:35px 15px}
-            .hero h1{font-size:28px}
-            .hero p{font-size:14px}
-            .container{width:92%;margin:35px auto}
-            .contact-content{grid-template-columns:1fr;gap:30px}
-            .data strong{display:block;margin-bottom:3px}
-            .email{font-size:16px}
-            .button{font-size:14px}
+            header{display:block;text-align:center;padding:12px 10px}
+            .logo-area{justify-content:center}
+            .logo-text{text-align:left}
+            nav{margin-top:12px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px}
+            nav a{font-size:12px;padding:8px 3px}
+
+            .contact-wrapper{width:94%;padding:20px}
+            .contact-grid{grid-template-columns:1fr;gap:25px}
+            .social-links{flex-wrap:wrap}
+        }
+
+        @media(max-width:430px){
+            nav{grid-template-columns:repeat(2,1fr)}
         }
     </style>
 </head>
@@ -84,101 +89,88 @@
 
     <!-- HEADER -->
     <header>
-        <div class="logo">
-            <img src="trejo.jpg" alt="Logo Movie Space">
+        <div class="logo-area">
+            <img class="logo" src="trejo.jpg" alt="Logo Movie Space">
             <div class="logo-text">
-                <h2>🎬 MOVIE SPACE</h2>
-                <p>Sabihisma Fetra</p>
+                <h1>MOVIE SPACE</h1>
+                <h3>Sabihisma Fetra</h3>
             </div>
         </div>
 
         <nav>
             <a href="index.html">🏠 Home</a>
-            <a href="profil.html">♟️ Profil</a>
-            <a href="daftar film.html">🎞️ Film</a>
+            <a href="profil.html">👤 Profil</a>
+            <a href="daftar film.html">🎞️ Daftar Film</a>
             <a href="gallery.html">🖼️ Gallery</a>
-            <a href="kontak.html" class="active">✉️ Kontak</a>
+            <a href="kontak.html" class="active">📧 Kontak</a>
         </nav>
     </header>
 
     <hr class="top-line">
 
-    <!-- HERO -->
-    <section class="hero">
-        <h1>📧 Kontak Movie Space</h1>
-        <p>Hubungi pengelola website untuk informasi lebih lanjut.</p>
-        <p>💬 Pertanyaan &nbsp; • &nbsp; 💡 Saran &nbsp; • &nbsp; 🎬 Informasi Film</p>
-    </section>
-
-    <!-- CONTENT -->
-    <main class="container">
-
-        <section class="intro">
-            <h2>📬 Hubungi Movie Space</h2>
-            <p>
-                Jika memiliki pertanyaan, saran, atau ingin mengetahui informasi
-                lebih lanjut mengenai website ini, silakan menghubungi pengelola
-                melalui kontak yang tersedia.
-            </p>
-        </section>
-
-        <div class="contact-content">
-
-            <section class="contact-section">
-                <h2>👤 Informasi Pengelola</h2>
-
-                <div class="data">
-                    <strong>Admin Website:</strong>
-                    <span>Sabihisma Fetra</span>
+    <!-- FORM & INFO KONTAK -->
+    <main class="contact-wrapper">
+        <div class="contact-grid">
+            
+            <!-- KOLOM KIRI: FORM -->
+            <form action="#" method="POST" onsubmit="alert('Pesan berhasil dikirim!'); return false;">
+                <div class="form-group">
+                    <label for="name">Nama</label>
+                    <input type="text" id="name" placeholder="Masukkan nama kamu" required>
                 </div>
 
-                <div class="data">
-                    <strong>Bidang:</strong>
-                    <span>Informasi Film</span>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Masukkan email kamu" required>
                 </div>
 
-                <div class="data">
-                    <strong>Website:</strong>
-                    <span>Movie Space</span>
+                <div class="form-group">
+                    <label for="message">Pesan</label>
+                    <textarea id="message" placeholder="Tuliskan pesan kamu di sini..." required></textarea>
                 </div>
-            </section>
 
-            <section class="contact-section">
-                <h2>📧 Email</h2>
+                <button type="submit" class="btn-submit"> Hubungi Kami</button>
+            </form>
 
-                <p>
-                    Untuk menghubungi pengelola website, silakan gunakan
-                    alamat email berikut:
-                </p>
+            <!-- KOLOM KANAN: INFORMASI & SOSMED -->
+            <div class="contact-info">
+                <h3>📌 Informasi Kontak</h3>
 
-                <a class="email" href="mailto:ismafetra17@gmail.com">
-                    ismafetra17@gmail.com
-                </a>
-            </section>
+                <div class="info-item">
+                    <label>Admin Web</label>
+                    <p>Sabihisma Fetra</p>
+                </div>
 
-        </div>
+                <div class="info-item">
+                    <label>Email Direct</label>
+                    <p><a href="mailto:ismafetra17@gmail.com">ismafetra17@gmail.com</a></p>
+                </div>
 
-        <section class="contact-section" style="margin-top:35px;">
-            <h2>💡 Informasi</h2>
+                <div class="info-item">
+                    <label>Situs Utama</label>
+                    <p>Movie Space</p>
+                </div>
 
-            <div class="note">
-                <p>
-                    📌 Hubungi alamat email di atas untuk langsung membuka
-                    aplikasi email dan mengirim pesan kepada pengelola website.
-                </p>
-                <p>
-                    Silakan gunakan email untuk memberikan pertanyaan,
-                    saran, atau masukan mengenai website Movie Space.
-                </p>
+                <div class="info-item">
+                    <label>Lokasi Layanan</label>
+                    <p>Tangerang, Banten, Indonesia</p>
+                </div>
+
+                <div class="social-links">
+                    <a href="#" class="social-btn">🌐 Website</a>
+                    <a href="#" class="social-btn">📷 Instagram</a>
+                    <a href="#" class="social-btn">🐦 Twitter</a>
+                </div>
             </div>
-        </section>
 
-        <div class="buttons">
-            <a class="button" href="index.html">🏠 Kembali ke Home</a>
-            <a class="button" href="daftar film.html">🎞️ Lihat Daftar Film</a>
         </div>
-
     </main>
+
+    <!-- TOMBOL BANTUAN -->
+    <div class="more">
+        <a class="hero-button" href="index.html">🏠 Kembali ke Home</a>
+        <a class="hero-button" href="daftar film.html">🎞️ Jelajahi Film</a>
+    </div>
 
     <!-- FOOTER -->
     <footer>
